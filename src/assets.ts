@@ -14,7 +14,7 @@ export const ASSETS = {
 
   // Unique photos without repetition
   hero: photo4915,              // Photo 1: Hero section (black blazer at desk)
-  about: 'https://i.postimg.cc/0QJyn55z/Retrato-profissional-com-batom-rosado-natural.png', // Photo 2: About / Quem sou eu (Retrato profissional com batom rosado natural)
+  about: 'https://i.imgur.com/Q1ommKX.jpeg', // Photo 2: About / Quem sou eu
   usa: photo5045,               // Photo 3: Online Therapy Brasil & Exterior (16:9 master portrait with golden logo)
   onlineGlobal: photo5045,      // Master landscape photo
   space: photo4912,             // Photo 4: Conheça o meu espaço (black uniform with gold accents, clinic)
@@ -29,7 +29,7 @@ export const ASSETS = {
   // Direct CDN URLs for instant preloading
   urls: {
     logo: 'https://i.postimg.cc/JntDmhdW/Logo-Dourado-Tatiane-Vilela.png',
-    aboutPortrait: 'https://i.postimg.cc/0QJyn55z/Retrato-profissional-com-batom-rosado-natural.png',
+    aboutPortrait: 'https://i.imgur.com/Q1ommKX.jpeg',
     photo5045: 'https://i.postimg.cc/rp3H1MYh/5045.jpg',
     photo4912: 'https://i.postimg.cc/g0qK3ywT/4912.jpg',
     photo4915: 'https://i.postimg.cc/g0qK3yXF/4915.jpg',

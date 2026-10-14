@@ -12,6 +12,7 @@ export interface ServiceItem {
   forWhom: string[];
   whatsappMessage: string;
   iconName: 'user' | 'heart' | 'users' | 'sparkles';
+  imageUrl?: string;
 }
 
 export interface TestimonialItem {

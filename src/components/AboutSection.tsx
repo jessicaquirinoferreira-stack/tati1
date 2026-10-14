@@ -107,6 +107,67 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
               </div>
             </div>
 
+            {/* Detailed Professional Presentation Blocks (Requested by Dra. Tatiane) */}
+            <div className="pt-6 space-y-6 border-t border-[#EDE6DC]">
+              <div className="space-y-3">
+                <h3 className="text-xl font-serif font-bold text-[#111417]">
+                  {lang === 'pt' ? 'Psicoterapia: um espaço para compreender, transformar e crescer' : 'Psychotherapy: A Space to Understand, Transform and Grow'}
+                </h3>
+                <p className="text-sm text-[#303841] leading-relaxed font-light">
+                  {lang === 'pt'
+                    ? 'A psicoterapia é um espaço de escuta profissional, acolhimento e reflexão, no qual cada pessoa pode compreender melhor suas emoções, reconhecer padrões, enfrentar dificuldades e desenvolver novas possibilidades para a própria vida.'
+                    : 'Psychotherapy is a space of professional listening, welcoming, and reflection, where each person can better understand their emotions, recognize patterns, face difficulties, and develop new possibilities for their own life.'}
+                </p>
+                <p className="text-sm text-[#303841] leading-relaxed font-light">
+                  {lang === 'pt'
+                    ? 'Atendo demandas individuais, conjugais e familiares, oferecendo um acompanhamento personalizado, pautado na ética, no respeito e na compreensão da singularidade de cada história.'
+                    : 'I handle individual, couple, and family demands, offering personalized support guided by ethics, respect, and the understanding of each story\'s uniqueness.'}
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="text-xl font-serif font-bold text-[#111417]">
+                  {lang === 'pt' ? 'Terapia Sexual: acolhimento e conhecimento para viver a sexualidade com mais liberdade' : 'Sexual Therapy: Welcoming and Knowledge to Live Sexuality with More Freedom'}
+                </h3>
+                <p className="text-sm text-[#303841] leading-relaxed font-light">
+                  {lang === 'pt'
+                    ? 'A sexualidade faz parte da saúde e do bem-estar. Ainda assim, muitas pessoas enfrentam dificuldades para falar sobre o assunto, seja por vergonha, insegurança, experiências anteriores, conflitos no relacionamento ou falta de informação.'
+                    : 'Sexuality is part of health and well-being. Yet, many people face difficulties talking about the subject due to shame, insecurity, past experiences, relationship conflicts, or lack of information.'}
+                </p>
+                <p className="text-sm text-[#303841] leading-relaxed font-light">
+                  {lang === 'pt'
+                    ? 'Como especialista em Sexualidade Humana, ofereço acompanhamento psicoterapêutico para questões relacionadas ao desejo sexual, às dificuldades de intimidade, à comunicação entre parceiros, à satisfação sexual e aos conflitos que podem afetar a vida íntima e os relacionamentos.'
+                    : 'As a specialist in Human Sexuality, I offer psychotherapeutic support for issues related to sexual desire, intimacy difficulties, partner communication, sexual satisfaction, and conflicts affecting intimate life and relationships.'}
+                </p>
+                <p className="text-sm text-[#303841] leading-relaxed font-light">
+                  {lang === 'pt'
+                    ? 'A terapia sexual é um espaço profissional, ético e acolhedor, que permite compreender essas questões sem julgamentos, respeitando os limites e a individualidade de cada pessoa ou casal. Quando necessário, o acompanhamento também pode envolver encaminhamento a outros profissionais de saúde.'
+                    : 'Sexual therapy is a professional, ethical, and welcoming space allowing these issues to be understood without judgment, respecting each person or couple\'s limits and individuality.'}
+                </p>
+              </div>
+
+              <div className="space-y-3 bg-[#F5EFE6] p-6 rounded-2xl border border-[#EBE1D2]">
+                <h3 className="text-xl font-serif font-bold text-[#111417]">
+                  {lang === 'pt' ? 'Meu compromisso com você' : 'My Commitment to You'}
+                </h3>
+                <p className="text-sm text-[#303841] leading-relaxed font-light">
+                  {lang === 'pt'
+                    ? 'Cada pessoa tem uma história única e merece ser escutada com atenção, respeito e responsabilidade. Meu compromisso é oferecer um espaço seguro para que você possa compreender suas dificuldades, fortalecer seus recursos emocionais e construir relações mais saudáveis consigo mesmo e com as pessoas ao seu redor.'
+                    : 'Each person has a unique story and deserves to be heard with attention, respect, and responsibility. My commitment is to provide a safe space for you to understand your difficulties and strengthen emotional resources.'}
+                </p>
+                <p className="text-sm text-[#303841] leading-relaxed font-light italic">
+                  {lang === 'pt'
+                    ? '“Cuidar de si é um passo importante para transformar a maneira como você vive, se relaciona e se percebe.”'
+                    : '“Caring for oneself is an important step to transform how you live, relate, and perceive yourself.”'}
+                </p>
+                <p className="text-sm text-[#303841] leading-relaxed font-light">
+                  {lang === 'pt'
+                    ? 'Ofereço psicoterapia presencial, em São Bernardo do Campo (SP), e atendimento on-line, para quem busca acompanhamento psicológico com acolhimento, ética e profissionalismo.'
+                    : 'I offer in-person psychotherapy in São Bernardo do Campo (SP) and online care for those seeking psychological support with warmth, ethics, and professionalism.'}
+                </p>
+              </div>
+            </div>
+
             {/* CTA */}
             <div className="pt-4">
               <a

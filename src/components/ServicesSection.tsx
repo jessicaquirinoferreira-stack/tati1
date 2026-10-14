@@ -111,8 +111,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang }) => {
           </div>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 3 Columns Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredItems.map((service) => {
             const cardWhatsAppUrl = buildWhatsAppLink(service.whatsappMessage);
             const badgeText = getBadgeTag(service.id);
@@ -126,9 +126,21 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang }) => {
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#C9A227]/10 to-transparent pointer-events-none rounded-tr-3xl" />
 
                 <div>
+                  {/* Service Card Image if provided */}
+                  {service.imageUrl && (
+                    <div className="mb-5 rounded-2xl overflow-hidden border border-[#EDE6DC] shadow-sm bg-[#F8F5F0] flex items-center justify-center p-3">
+                      <img
+                        src={service.imageUrl}
+                        alt={service.title}
+                        className="w-full h-auto max-h-[280px] object-contain group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+
                   {/* Top Bar with Icon & Badge */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-13 h-13 rounded-2xl bg-[#FBF8EB] border border-[#ECDDA3] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C9A227] group-hover:text-white transition-all shadow-xs">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-[#FBF8EB] border border-[#ECDDA3] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C9A227] group-hover:text-white transition-all shadow-xs">
                       {getServiceIcon(service.iconName)}
                     </div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#8C631A] bg-[#FBF8EB] px-2.5 py-1 rounded-full border border-[#ECDDA3]">

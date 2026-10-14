@@ -51,10 +51,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
       return;
     }
 
+    const emailBody = `Nome: ${formData.name}\nE-mail: ${formData.email || 'Não informado'}\nTelefone: ${formData.phone || 'Não informado'}\nServiço: ${formData.service || 'Não informado'}\nLocalização: ${formData.location || 'Não informada'}\n\nMensagem:\n${formData.message || 'Sem mensagem adicional.'}`;
+
+    // Copy to clipboard as a reliable backup
+    navigator.clipboard.writeText(emailBody).catch(() => {});
+
     const subject = encodeURIComponent(`Consulta - ${formData.name} (${formData.service || 'Atendimento'})`);
-    const body = encodeURIComponent(
-      `Nome: ${formData.name}\nE-mail: ${formData.email}\nTelefone: ${formData.phone}\nServiço: ${formData.service}\nLocalização: ${formData.location}\n\nMensagem:\n${formData.message}`
-    );
+    const body = encodeURIComponent(emailBody);
 
     window.location.href = `mailto:${CLINIC_INFO.email}?subject=${subject}&body=${body}`;
     setSubmittedStatus('email');
@@ -84,13 +87,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
             </h3>
 
             {submittedStatus && (
-              <div className="mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-                <span>
+              <div className="mb-6 p-4 rounded-xl bg-[#FBF8EB] border border-[#C9A227]/30 text-[#111417] text-xs sm:text-sm space-y-2">
+                <div className="flex items-center gap-2 text-[#8C631A] font-bold">
+                  <CheckCircle2 className="w-5 h-5 text-[#C9A227] shrink-0" />
+                  <span>
+                    {lang === 'pt'
+                      ? `E-mail direcionado para ${CLINIC_INFO.email}`
+                      : `Email targeted to ${CLINIC_INFO.email}`}
+                  </span>
+                </div>
+                <p className="text-[#525E6A]">
                   {lang === 'pt'
-                    ? 'Mensagem preparada com sucesso! Entraremos em contato em breve.'
-                    : 'Message prepared successfully! We will get in touch shortly.'}
-                </span>
+                    ? 'Seu aplicativo de e-mail foi aberto com os dados preenchidos. Os dados também foram copiados para sua área de transferência.'
+                    : 'Your email application was opened with the pre-filled data. The text was also copied to your clipboard.'}
+                </p>
               </div>
             )}
 
