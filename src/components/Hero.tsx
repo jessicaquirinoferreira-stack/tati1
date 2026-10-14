@@ -111,9 +111,11 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
                 </p>
               </div>
               <div>
-                <p className="text-2xl sm:text-3xl font-serif font-bold text-gold-gradient">50 EUA</p>
+                <p className="text-2xl sm:text-3xl font-serif font-bold text-gold-gradient">
+                  {lang === 'pt' ? 'Exterior' : 'Global'}
+                </p>
                 <p className="text-xs text-white/60 mt-0.5">
-                  {lang === 'pt' ? 'Estados atendidos' : 'US states covered'}
+                  {lang === 'pt' ? 'Brasil & Exterior' : 'Brazil & Abroad'}
                 </p>
               </div>
               <div>
@@ -126,16 +128,16 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
           </div>
 
           {/* Right Column: High-End Card with Framed Portrait & Floating Badges */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-md">
+          <div className="lg:col-span-5 flex justify-center items-center">
+            <div className="relative w-full max-w-lg">
               {/* Luxury gold glow halo */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-[#C9A227] via-[#8C631A] to-emerald-500/30 rounded-3xl blur-lg opacity-40 group-hover:opacity-70 transition duration-700" />
+              <div className="absolute -inset-3 bg-gradient-to-tr from-[#C9A227] via-[#8C631A] to-emerald-500/30 rounded-3xl blur-xl opacity-50 group-hover:opacity-80 transition duration-700" />
               
-              <div className="relative rounded-3xl overflow-hidden bg-[#161B20] border-2 border-[#C9A227]/40 shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden bg-[#0A0C0E] border-2 border-[#C9A227]/50 shadow-2xl aspect-square flex items-center justify-center">
                 <img
-                  src={ASSETS.hero}
+                  src={ASSETS.usa}
                   alt="Dra. Tatiane Vilela - Psicóloga e Sexóloga"
-                  className="w-full aspect-[2/3] max-h-[560px] object-cover object-top filter contrast-[1.02]"
+                  className="w-full h-full object-contain object-center filter contrast-[1.02] p-2"
                   loading="eager"
                 />
 
@@ -169,7 +171,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
                       <MapPin className="w-3.5 h-3.5 text-[#C9A227] shrink-0" />
                       <span>{CLINIC_INFO.city}</span>
                     </span>
-                    <span className="text-[#DFC56E] font-medium">100% Online Brasil & EUA</span>
+                    <span className="text-[#DFC56E] font-medium">100% Online Brasil & Exterior</span>
                   </div>
                 </div>
               </div>
