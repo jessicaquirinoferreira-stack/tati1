@@ -124,6 +124,8 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
     },
   ];
 
+  const h = CONTENT[lang].hero;
+
   return (
     <div className="relative w-full">
       {/* 1. MASTER HERO SECTION (Background Photo with Armchair, Bookshelf, Dra. Tatiane Vilela) */}
@@ -178,25 +180,18 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
           <div className="max-w-xl lg:max-w-2xl text-left space-y-5 sm:space-y-6">
             {/* 1. Category Tagline */}
             <p className="text-xs sm:text-[13px] tracking-[0.24em] uppercase font-semibold text-[#DFC56E] leading-none">
-              SAÚDE EMOCIONAL <span className="mx-2 text-[#C9A227]/70">|</span> RELACIONAMENTOS{' '}
-              <span className="mx-2 text-[#C9A227]/70">|</span> SEXUALIDADE
+              {lang === 'pt' ? 'SAÚDE EMOCIONAL' : 'EMOTIONAL HEALTH'} <span className="mx-2 text-[#C9A227]/70">|</span> {lang === 'pt' ? 'RELACIONAMENTOS' : 'RELATIONSHIPS'}{' '}
+              <span className="mx-2 text-[#C9A227]/70">|</span> {lang === 'pt' ? 'SEXUALIDADE' : 'SEXUALITY'}
             </p>
 
             {/* 2. Main Headline in classic serif */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-serif font-bold text-[#FFF9F2] leading-[1.12] tracking-tight">
-              Mais conexão
-              <br />
-              com a sua história
-              <br />
-              para uma vida
-              <br />
-              mais plena.
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-serif font-bold text-[#FFF9F2] leading-[1.12] tracking-tight whitespace-pre-line">
+              {h.headline}
             </h1>
 
             {/* 3. Subheadline */}
             <p className="text-sm sm:text-base text-[#E5DDD2] font-light leading-relaxed max-w-lg">
-              Um espaço acolhedor, seguro e confidencial para cuidar da sua saúde emocional, dos seus
-              relacionamentos e da sua sexualidade.
+              {h.subheadline}
             </p>
 
             {/* 4. Action Buttons (Side by Side) */}
@@ -209,7 +204,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#FFF9F0] bg-[#432E16] hover:bg-[#4E371C] border border-[#C9A227] shadow-xl hover:shadow-[#C9A227]/20 transition-all cursor-pointer group"
               >
                 <MessageCircle className="w-4 h-4 text-[#DFC56E] shrink-0" />
-                <span>Agendar consulta no WhatsApp</span>
+                <span>{h.ctaPrimary}</span>
                 <span className="text-[#DFC56E] font-bold group-hover:translate-x-1 transition-transform">
                   →
                 </span>
@@ -221,7 +216,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
                 onClick={onExploreServices}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-black/60 hover:bg-black/85 border border-[#C9A227]/75 hover:border-[#DFC56E] transition-all cursor-pointer group"
               >
-                <span>Conhecer os serviços</span>
+                <span>{h.ctaSecondary}</span>
                 <span className="text-[#DFC56E] font-bold group-hover:translate-x-1 transition-transform">
                   →
                 </span>
@@ -234,7 +229,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-5 h-5 text-[#C9A227] shrink-0 mt-0.5" />
                 <div className="leading-tight">
-                  <p className="font-semibold text-white">Atendimento presencial em</p>
+                  <p className="font-semibold text-white">{lang === 'pt' ? 'Atendimento presencial em' : 'In-person care in'}</p>
                   <p className="text-white/70 text-[11px] mt-0.5">São Bernardo do Campo - SP</p>
                 </div>
               </div>
@@ -243,8 +238,8 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
               <div className="flex items-start gap-2.5">
                 <Laptop className="w-5 h-5 text-[#C9A227] shrink-0 mt-0.5" />
                 <div className="leading-tight">
-                  <p className="font-semibold text-white">Atendimento online</p>
-                  <p className="text-white/70 text-[11px] mt-0.5">para o Brasil e exterior</p>
+                  <p className="font-semibold text-white">{lang === 'pt' ? 'Atendimento online' : 'Online care'}</p>
+                  <p className="text-white/70 text-[11px] mt-0.5">{lang === 'pt' ? 'para o Brasil e exterior' : 'for Brazil & abroad'}</p>
                 </div>
               </div>
 
@@ -252,8 +247,8 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
               <div className="flex items-start gap-2.5">
                 <ShieldCheck className="w-5 h-5 text-[#C9A227] shrink-0 mt-0.5" />
                 <div className="leading-tight">
-                  <p className="font-semibold text-white">Ambiente seguro</p>
-                  <p className="text-white/70 text-[11px] mt-0.5">e sigiloso</p>
+                  <p className="font-semibold text-white">{lang === 'pt' ? 'Ambiente seguro' : 'Secure & strict'}</p>
+                  <p className="text-white/70 text-[11px] mt-0.5">{lang === 'pt' ? 'e sigiloso' : 'confidential setting'}</p>
                 </div>
               </div>
             </div>

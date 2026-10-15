@@ -458,7 +458,7 @@ export const CONTENT = {
     },
     hero: {
       badge: 'In-Person in SP (Brazil) & 100% Online in Brazil & Abroad',
-      headline: 'More connection with your story for a fuller life.',
+      headline: 'More connection\nwith your story\nfor a fuller life.',
       subheadline:
         'A warm, safe, and confidential space to care for your mental health, your relationships, and your sexual intimacy.',
       ctaPrimary: 'Book consultation on WhatsApp',

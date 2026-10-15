@@ -27,7 +27,7 @@ import { UsaPage } from './pages/UsaPage';
 export default function App() {
   const [lang, setLang] = useState<Language>('pt');
   const [currentPage, setCurrentPage] = useState<PageId>('home');
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(false);
 
   // Sync document title and meta description dynamically with language
   useEffect(() => {
