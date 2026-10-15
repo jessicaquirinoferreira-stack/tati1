@@ -2,7 +2,7 @@ import React from 'react';
 import { Language } from '../types';
 import { CLINIC_INFO, CONTENT, buildWhatsAppLink } from '../data/translations';
 import { ASSETS } from '../assets';
-import { MessageCircle, HeartHandshake, Eye, Shield, Sparkles, Award } from 'lucide-react';
+import { MessageCircle, HeartHandshake, Eye, Shield, Sparkles, Award, MapPin } from 'lucide-react';
 
 interface AboutSectionProps {
   lang: Language;
@@ -37,18 +37,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
                 <img
                   src={ASSETS.about}
                   alt="Dra. Tatiane Vilela"
-                  className="w-full aspect-[2/3] max-h-[560px] object-cover object-top"
+                  className="w-full aspect-[2/3] object-cover object-center"
                   loading="lazy"
                 />
                 
                 {/* Floating card on image */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-xs p-4 rounded-lg shadow-md border border-[#EDE6DC]">
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-white/95 backdrop-blur-md p-3 sm:p-4 rounded-xl shadow-lg border border-[#EDE6DC]">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#FBF5DF] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#FBF5DF] flex items-center justify-center shrink-0 border border-[#C9A227]/30">
                       <Award className="w-5 h-5 text-[#C9A227]" />
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-wider text-[#8C631A] font-semibold">
+                      <p className="text-[11px] uppercase tracking-wider text-[#8C631A] font-semibold">
                         {lang === 'pt' ? 'Registro Profissional' : 'Professional License'}
                       </p>
                       <p className="text-sm font-bold text-[#161B20] font-mono">
@@ -146,7 +146,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
                 </p>
               </div>
 
-              <div className="space-y-3 bg-[#F5EFE6] p-6 rounded-2xl border border-[#EBE1D2]">
+              <div className="space-y-4 bg-[#F5EFE6] p-6 rounded-2xl border border-[#EBE1D2]">
                 <h3 className="text-xl font-serif font-bold text-[#111417]">
                   {lang === 'pt' ? 'Meu compromisso com você' : 'My Commitment to You'}
                 </h3>
@@ -160,11 +160,47 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
                     ? '“Cuidar de si é um passo importante para transformar a maneira como você vive, se relaciona e se percebe.”'
                     : '“Caring for oneself is an important step to transform how you live, relate, and perceive yourself.”'}
                 </p>
-                <p className="text-sm text-[#303841] leading-relaxed font-light">
-                  {lang === 'pt'
-                    ? 'Ofereço psicoterapia presencial, em São Bernardo do Campo (SP), e atendimento on-line, para quem busca acompanhamento psicológico com acolhimento, ética e profissionalismo.'
-                    : 'I offer in-person psychotherapy in São Bernardo do Campo (SP) and online care for those seeking psychological support with warmth, ethics, and professionalism.'}
-                </p>
+
+                {/* Conheça o meu espaço showcase */}
+                <div className="mt-4 pt-4 border-t border-[#E0D5C3] space-y-4">
+                  <div className="rounded-xl overflow-hidden shadow-md border border-[#E0D5C3] bg-white">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#0A0C0E]">
+                      <img
+                        src={ASSETS.space}
+                        alt="Conheça o meu espaço - Consultório Dra. Tatiane Vilela"
+                        className="w-full h-full object-cover object-center"
+                        loading="lazy"
+                      />
+                      <div className="absolute top-3 left-3 bg-[#111417]/85 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-[#DFC56E] border border-[#C9A227]/40">
+                        {lang === 'pt' ? 'Conheça o meu espaço' : 'My Practice Space'}
+                      </div>
+                    </div>
+                    <div className="p-4 bg-white space-y-1.5">
+                      <p className="font-serif font-bold text-[#111417] text-base">
+                        {lang === 'pt' ? 'Conheça o meu espaço' : 'Discover My Space'}
+                      </p>
+                      <p className="text-xs sm:text-sm text-[#303841] leading-relaxed italic">
+                        {lang === 'pt'
+                          ? '“Conheça o meu espaço, um ambiente tranquilo, um refúgio planejado, cada detalhe pra promover serenidade e acolhimento.”'
+                          : '“Discover my space, a peaceful environment, a thoughtfully designed sanctuary with every detail crafted to foster serenity and warmth.”'}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-white border border-[#E0D5C3] text-xs sm:text-sm text-[#111417]">
+                    <MapPin className="w-4 h-4 text-[#C9A227] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-[#8C631A] block text-[11px] uppercase tracking-wider">
+                        {lang === 'pt' ? 'Locais de Atendimento' : 'Care Locations'}
+                      </span>
+                      <span className="font-medium text-[#161B20]">
+                        {lang === 'pt'
+                          ? 'São Bernardo do Campo, 100% online, em todo o território do Brasil e exterior'
+                          : 'São Bernardo do Campo, 100% online across Brazil and abroad'}
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

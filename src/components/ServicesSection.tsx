@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import { Language, ServiceItem } from '../types';
 import { CONTENT, buildWhatsAppLink } from '../data/translations';
+import { ASSETS } from '../assets';
 import { User, Heart, Users, Sparkles, MessageCircle, ArrowRight, Check, X, Star } from 'lucide-react';
 
 interface ServicesSectionProps {
   lang: Language;
+  onExploreServices?: () => void;
+  onExploreDiagnostic?: () => void;
 }
 
-export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang }) => {
+export const ServicesSection: React.FC<ServicesSectionProps> = ({
+  lang,
+  onExploreServices,
+  onExploreDiagnostic,
+}) => {
   const t = CONTENT[lang].services;
   const [activeModalService, setActiveModalService] = useState<ServiceItem | null>(null);
-  const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const getServiceIcon = (name: string) => {
     switch (name) {
@@ -56,11 +62,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang }) => {
     }
   };
 
-  const filteredItems =
-    activeFilter === 'all'
-      ? t.items
-      : t.items.filter((item) => item.id === activeFilter);
-
   return (
     <section id="servicos" className="py-20 lg:py-28 bg-[#F4EFEA] text-[#161B20] border-t border-[#EDE6DC] relative overflow-hidden">
       {/* Background ambient accents */}
@@ -81,63 +82,57 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang }) => {
             {t.subtitle}
           </p>
 
-          {/* Interactive Filter Pills */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            <button
-              type="button"
-              onClick={() => setActiveFilter('all')}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                activeFilter === 'all'
-                  ? 'bg-[#111417] text-[#DFC56E] shadow-md scale-105'
-                  : 'bg-white text-[#525E6A] hover:bg-[#FBF8EB] border border-[#EDE6DC]'
-              }`}
-            >
-              {lang === 'pt' ? 'Todos os Serviços' : 'All Services'}
-            </button>
-            {t.items.map((srv) => (
-              <button
-                key={srv.id}
-                type="button"
-                onClick={() => setActiveFilter(srv.id)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                  activeFilter === srv.id
-                    ? 'bg-[#111417] text-[#DFC56E] shadow-md scale-105'
-                    : 'bg-white text-[#525E6A] hover:bg-[#FBF8EB] border border-[#EDE6DC]'
-                }`}
-              >
-                {srv.title}
-              </button>
-            ))}
+          {/* Warm Consultório Highlight Banner: Poltrona & Fundo de Estante */}
+          <div className="mt-8 bg-[#111417] text-white rounded-3xl p-6 sm:p-8 relative overflow-hidden border border-[#C9A227]/30 shadow-2xl text-left">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#111417] via-[#111417]/95 to-[#1a140e]/90 z-0" />
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              <div className="md:col-span-7 space-y-3">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C9A227]/15 border border-[#C9A227]/40 text-[#DFC56E] text-xs font-semibold uppercase tracking-wider">
+                  <Sparkles className="w-3.5 h-3.5 text-[#C9A227]" />
+                  <span>{lang === 'pt' ? 'Acolhimento & Cuidado Personalizado' : 'Warmth & Personalized Care'}</span>
+                </span>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white leading-tight">
+                  {lang === 'pt' ? 'O Acolhimento do Nosso Consultório' : 'The Warmth of Our Practice Space'}
+                </h3>
+                <p className="text-xs sm:text-sm text-white/85 font-light leading-relaxed">
+                  {lang === 'pt'
+                    ? 'A poltrona, o fundo de estante e a iluminação suave: cada detalhe foi planejado para acolher sua história com privacidade, conforto e serenidade — respeitando o tempo de cada modalidade terapêutica.'
+                    : 'The armchair, library background, and gentle lighting: every detail is prepared to welcome your story with privacy, comfort, and serenity, honoring the natural rhythm of your healing.'}
+                </p>
+              </div>
+              <div className="md:col-span-5">
+                <div className="rounded-2xl overflow-hidden border-2 border-[#C9A227]/40 shadow-xl relative aspect-[4/3] group">
+                  <img
+                    src={ASSETS.space}
+                    alt={lang === 'pt' ? 'Consultório Dra. Tatiane Vilela - Poltrona e Estante' : 'Dr. Tatiane Vilela Clinic - Armchair & Bookshelf'}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3 text-xs text-[#DFC56E] font-medium flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#C9A227] animate-pulse" />
+                    <span>{lang === 'pt' ? 'Nosso espaço de acolhimento' : 'Our practice sanctuary'}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
 
-        {/* 3 Columns Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((service) => {
-            const cardWhatsAppUrl = buildWhatsAppLink(service.whatsappMessage);
+        {/* 4 Cards Grid - Lightweight, Fast-Loading, without repetitive heavy images */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {t.items.map((service) => {
             const badgeText = getBadgeTag(service.id);
 
             return (
               <div
                 key={service.id}
-                className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-[#EDE6DC] hover:border-[#C9A227] shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+                className="bg-white rounded-3xl p-6 border border-[#EDE6DC] hover:border-[#C9A227] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
               >
                 {/* Decorative top corner sheen */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#C9A227]/10 to-transparent pointer-events-none rounded-tr-3xl" />
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-[#C9A227]/10 to-transparent pointer-events-none rounded-tr-3xl" />
 
                 <div>
-                  {/* Service Card Image if provided */}
-                  {service.imageUrl && (
-                    <div className="mb-5 rounded-2xl overflow-hidden border border-[#EDE6DC] shadow-sm bg-[#F8F5F0] flex items-center justify-center p-3">
-                      <img
-                        src={service.imageUrl}
-                        alt={service.title}
-                        className="w-full h-auto max-h-[280px] object-contain group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
-                    </div>
-                  )}
-
                   {/* Top Bar with Icon & Badge */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="w-12 h-12 rounded-2xl bg-[#FBF8EB] border border-[#ECDDA3] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#C9A227] group-hover:text-white transition-all shadow-xs">
@@ -149,7 +144,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang }) => {
                   </div>
 
                   {/* Title & Subtitle */}
-                  <h3 className="text-xl font-serif font-bold text-[#111417] group-hover:text-[#8C631A] transition-colors leading-snug">
+                  <h3 className="text-lg font-serif font-bold text-[#111417] group-hover:text-[#8C631A] transition-colors leading-snug">
                     {service.title}
                   </h3>
                   <p className="text-xs font-medium text-[#8C631A] mt-1 italic">
@@ -157,7 +152,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang }) => {
                   </p>
 
                   {/* Description */}
-                  <p className="text-sm text-[#475467] mt-3.5 leading-relaxed font-light">
+                  <p className="text-xs sm:text-sm text-[#475467] mt-3 leading-relaxed font-light">
                     {service.shortDesc}
                   </p>
 
@@ -172,30 +167,76 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang }) => {
                   </ul>
                 </div>
 
-                {/* Actions */}
-                <div className="pt-6 space-y-2.5">
+                {/* Card Action */}
+                <div className="pt-5 border-t border-[#F2ECE4] mt-4">
                   <button
                     type="button"
-                    onClick={() => setActiveModalService(service)}
-                    className="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 text-xs font-semibold text-[#111417] hover:text-[#8C631A] hover:bg-[#FBF8EB] rounded-xl transition-colors cursor-pointer border border-transparent hover:border-[#ECDDA3]"
+                    onClick={() => {
+                      if (onExploreServices) {
+                        onExploreServices();
+                      } else {
+                        setActiveModalService(service);
+                      }
+                    }}
+                    className="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 text-xs font-semibold text-[#111417] hover:text-[#8C631A] hover:bg-[#FBF8EB] rounded-xl transition-colors cursor-pointer border border-[#EDE6DC] hover:border-[#ECDDA3]"
                   >
-                    <span>{t.cardCta}</span>
+                    <span>{lang === 'pt' ? 'Ver detalhes da modalidade' : 'View modality details'}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </button>
-
-                  <a
-                    href={cardWhatsAppUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-md hover:shadow-lg transition-all"
-                  >
-                    <MessageCircle className="w-4 h-4 fill-white shrink-0" />
-                    <span>{t.whatsappBtn}</span>
-                  </a>
                 </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Unified Bottom Action Bar - Direct navigation to full Services tab and WhatsApp */}
+        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-white border border-[#EDE6DC] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-left space-y-1">
+            <h4 className="text-base sm:text-lg font-serif font-bold text-[#111417]">
+              {lang === 'pt'
+                ? 'Quer conhecer todas as fotos e orientações detalhadas de cada terapia?'
+                : 'Want to view full photos and in-depth details for each therapy?'}
+            </h4>
+            <p className="text-xs sm:text-sm text-[#525E6A]">
+              {lang === 'pt'
+                ? 'Acesse a aba de Serviços para ver os detalhes completos ou utilize nosso Guia Interativo.'
+                : 'Visit our Services tab for full descriptions or try our Interactive Guide.'}
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3 w-full md:w-auto shrink-0">
+            {onExploreServices && (
+              <button
+                type="button"
+                onClick={onExploreServices}
+                className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold bg-[#111417] hover:bg-[#20262c] text-[#DFC56E] border border-[#C9A227]/40 shadow-sm transition-all cursor-pointer"
+              >
+                <Sparkles className="w-4 h-4 text-[#C9A227]" />
+                <span>{lang === 'pt' ? 'Aba de Serviços Completa' : 'Full Services Tab'}</span>
+              </button>
+            )}
+
+            {onExploreDiagnostic && (
+              <button
+                type="button"
+                onClick={onExploreDiagnostic}
+                className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold bg-[#FBF8EB] hover:bg-[#F4EFEA] text-[#8C631A] border border-[#ECDDA3] transition-all cursor-pointer"
+              >
+                <span>{lang === 'pt' ? 'Guia Cuidado Ideal' : 'Ideal Care Guide'}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            )}
+
+            <a
+              href={buildWhatsAppLink(lang === 'pt' ? 'Olá Dra. Tatiane, gostaria de tirar dúvidas sobre os atendimentos.' : 'Hello Dr. Tatiane, I have questions about your therapy sessions.')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-md transition-all"
+            >
+              <MessageCircle className="w-4 h-4 fill-white" />
+              <span>{lang === 'pt' ? 'Falar no WhatsApp' : 'Chat on WhatsApp'}</span>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -266,8 +307,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang }) => {
             <div className="mt-8 pt-5 border-t border-[#F2ECE4] flex flex-col sm:flex-row items-center justify-between gap-3">
               <span className="text-xs text-[#734F1B] italic">
                 {lang === 'pt'
-                  ? 'Sessões com 50 min. Atendimento presencial e online.'
-                  : '50-minute sessions. In-person & online available.'}
+                  ? 'Atendimento acolhedor presencial e 100% online.'
+                  : 'Warm in-person and 100% online therapy.'}
               </span>
               <a
                 href={buildWhatsAppLink(activeModalService.whatsappMessage)}

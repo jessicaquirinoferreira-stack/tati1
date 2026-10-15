@@ -16,7 +16,7 @@ export const TrustMarquee: React.FC<TrustMarqueeProps> = ({ lang }) => {
           { text: 'Terapia Sexual Especializada', icon: Award },
           { text: 'Terapia Online para Brasil & Exterior', icon: Globe2 },
           { text: 'Sigilo Absoluto & Ética CFP', icon: Shield },
-          { text: 'São Bernardo do Campo & 100% Online', icon: Globe2 },
+          { text: 'São Bernardo do Campo, 100% online, Brasil e exterior', icon: Globe2 },
           { text: 'Mais de 14 Anos de Experiência Clínica', icon: Award },
         ]
       : [
@@ -26,7 +26,7 @@ export const TrustMarquee: React.FC<TrustMarqueeProps> = ({ lang }) => {
           { text: 'Specialized Sexual Therapy', icon: Award },
           { text: 'Online Therapy for Brazil & Worldwide', icon: Globe2 },
           { text: 'Strict Confidentiality & Ethics', icon: Shield },
-          { text: 'In-Person in SP & 100% Online', icon: Globe2 },
+          { text: 'São Bernardo do Campo, 100% online, Brazil & Abroad', icon: Globe2 },
           { text: 'Over 14 Years of Clinical Experience', icon: Award },
         ];
 

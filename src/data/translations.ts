@@ -2,8 +2,8 @@ import { ServiceItem, TestimonialItem, FaqItem } from '../types';
 
 export const CLINIC_INFO = {
   name: 'Dra. Tatiane Vilela',
-  titlePt: 'Psicóloga | Sexóloga | Especialista em Sexualidade Humana',
-  titleEn: 'Psychologist | Sexologist | Specialist in Human Sexuality',
+  titlePt: 'Psicóloga & Sexóloga',
+  titleEn: 'Psychologist & Sexologist',
   crp: 'CRP 06/98605-SP',
   sloganPt: 'Saúde emocional para uma vida mais plena.',
   sloganEn: 'Emotional health for a fuller life.',
@@ -13,9 +13,9 @@ export const CLINIC_INFO = {
   email: 'Dra.tatianevilela@uol.com.br',
   instagram: '@dra.tatianevilelapsi',
   instagramUrl: 'https://instagram.com/dra.tatianevilelapsi',
-  city: 'São Bernardo do Campo – SP (Brasil)',
-  onlineNotePt: 'Atendimento 100% ONLINE para pacientes em todo o Brasil e brasileiros residentes no Exterior (EUA, Europa e outros países). Terapia humanizada em português.',
-  onlineNoteEn: '100% ONLINE therapy for clients across Brazil and Brazilians living Abroad (USA, Europe, and worldwide). Compassionate care in Portuguese.',
+  city: 'São Bernardo do Campo, 100% online, em todo o território do Brasil e exterior',
+  onlineNotePt: 'São Bernardo do Campo, 100% online, em todo o território do Brasil e exterior.',
+  onlineNoteEn: 'São Bernardo do Campo, 100% online across Brazil and abroad.',
 };
 
 export function buildWhatsAppLink(message: string): string {
@@ -28,6 +28,7 @@ export const CONTENT = {
       home: 'Início',
       about: 'Quem sou eu',
       services: 'Serviços',
+      cuidadoIdeal: 'Cuidado Ideal',
       usa: 'Brasil & Exterior',
       contact: 'Contato',
       ctaHeader: 'Agendar no WhatsApp',
@@ -43,17 +44,19 @@ export const CONTENT = {
       onlineBadge: '100% Online Brasil & Exterior',
       stats: [
         { label: 'Anos de experiência clínica', value: '+14' },
-        { label: 'Pacientes acolhidos', value: '+1.500' },
         { label: 'Atendimento global', value: 'Brasil & Exterior' },
+        { label: 'Privacidade & Sigilo', value: '100% Ético' },
       ],
     },
     about: {
       tagline: 'Quem sou eu',
-      title: 'Uma trajetória dedicada ao cuidado com las pessoas',
+      title: 'Conheça o meu espaço, um ambiente tranquilo, um refúgio planejado, cada detalhe pra promover serenidade e acolhimento.',
+      spaceQuote: 'Conheça o meu espaço, um ambiente tranquilo, um refúgio planejado, cada detalhe pra promover serenidade e acolhimento.',
+      locations: 'São Bernardo do Campo, 100% online, em todo o território do Brasil e exterior',
       p1: 'Acredito que cuidar da saúde emocional é abrir caminhos para uma vida com mais equilíbrio, autoconhecimento e qualidade nas relações. Minha trajetória profissional é dedicada a acolher pessoas em suas diferentes fases da vida, respeitando suas histórias, individualidades e necessidades.',
       p2: 'Sou psicóloga, graduada em Psicologia pela Universidade Metodista de São Paulo, e especialista em Sexologia pela Faculdade de Medicina da Fundação do ABC, onde concluí a pós-graduação Novos Paradigmas em Saúde Sexual, com carga horária de 360 horas.',
       p3: 'Minha formação une o olhar sobre a saúde emocional à compreensão da sexualidade humana, permitindo um trabalho que considera o indivíduo de forma integral, incluindo seus sentimentos, pensamentos, comportamentos, relacionamentos e experiências de vida.',
-      p4: 'Ofereço psicoterapia presencial, em São Bernardo do Campo (SP), e atendimento on-line, para quem busca acompanhamento psicológico com acolhimento, ética e profissionalismo.',
+      p4: 'Ofereço psicoterapia presencial em São Bernardo do Campo e atendimento 100% online em todo o território do Brasil e exterior, com acolhimento, ética e profissionalismo.',
       valuesTitle: 'Pilares do meu atendimento:',
       values: [
         {
@@ -77,7 +80,7 @@ export const CONTENT = {
     },
     services: {
       tagline: 'Serviços Especializados',
-      title: 'Áreas de Atuação e Cuidado Terapêutico',
+      title: 'Área de Atuação e Cuidado Terapêutico',
       subtitle:
         'Abordagens pensadas para atender as diferentes fases e necessidades da sua jornada emocional e afetiva.',
       cardCta: 'Quero saber mais',
@@ -270,7 +273,7 @@ export const CONTENT = {
         },
         {
           title: 'Flexibilidade de Horários',
-          desc: 'Janelas de atendimento planejadas para compatibilidade com os fusos horários do Brasil, EUA, Europa e outros continentes.',
+          desc: 'Janelas de atendimento planejadas com flexibilidade e conforto para o seu dia a dia.',
         },
         {
           title: 'Acolhimento Empático Genuíno',
@@ -279,32 +282,32 @@ export const CONTENT = {
       ],
     },
     usaSection: {
-      tagline: 'Atendimento Sem Fronteiras',
+      tagline: 'Atendimento Sem Fronteiras Geográficas',
       title: 'Terapia Online para Brasil e Exterior',
-      highlightBadge: 'Terapia em Português para Todo o Brasil e Brasileiros no Exterior',
-      p1: 'Seja você morando em qualquer estado do Brasil ou vivendo como expatriado(a) no exterior — Estados Unidos, Europa, Reino Unido, Canadá, Japão e outros países —, cuidar da sua saúde emocional na sua língua materna é um ato transformador.',
-      p2: 'Viver longe ou enfrentar desafios emocionais exige um espaço de escuta qualificado, acolhedor e seguro. Em terapia, as nuances dos seus sentimentos, sua cultura de origem e suas dores mais profundas são compreendidas sem barreiras e sem necessidade de filtros.',
+      highlightBadge: 'Atendimento Psicológico em Português para Qualquer Lugar do Mundo',
+      p1: 'Realizo psicoterapia para qualquer pessoa que estiver em qualquer lugar do mundo — seja em qualquer estado do Brasil ou vivendo no exterior —, desde que a pessoa fale português, pois todo o meu atendimento clínico é realizado exclusivamente em língua portuguesa.',
+      p2: 'Um espaço de escuta acolhedor, seguro, ético e confidencial. Você não precisa enfrentar suas dores ou desafios emocionais sozinho: onde quer que você esteja, se você fala português, encontrará aqui um cuidado profissional dedicado e transformador.',
       benefits: [
         {
-          title: 'Conforto da Língua Materna',
-          desc: 'Expressar sentimentos íntimos, traumas e memórias no seu idioma nativo permite uma elaboração emocional muito mais profunda e curativa.',
+          title: 'Atendimento Exclusivo em Português',
+          desc: 'Todas as consultas e sessões terapêuticas são conduzidas inteiramente em língua portuguesa, permitindo que você expresse sentimentos, dores e vivências com total naturalidade.',
         },
         {
-          title: 'Acolhimento à Realidade do Imigrante & Expatriado',
-          desc: 'Compreensão especializada dos desafios de morar fora: choque cultural, solidão, saudades de casa, adaptação e relacionamentos à distância.',
+          title: 'Acolhimento Sem Barreiras',
+          desc: 'Compreensão humana e empática da sua realidade, seja no Brasil ou vivenciando os desafios emocionais e cotidianos de morar no exterior.',
         },
         {
-          title: 'Fusos Horários Flexíveis',
-          desc: 'Agendamentos compatíveis com os horários de trabalho no Brasil (Brasília), Estados Unidos (EST, CST, MST, PST), Europa e outros continentes.',
+          title: 'Praticidade & Conforto Online',
+          desc: 'Sessões realizadas 100% online por videochamada com total comodidade, permitindo que você cuide de si no conforto do seu próprio ambiente.',
         },
         {
-          title: 'Plataforma Segura e Criptografada',
-          desc: 'Consultas em ambiente online confidencial, com privacidade garantida e total rigor com o Código de Ética Profissional (CFP).',
+          title: 'Privacidade & Sigilo Absoluto',
+          desc: 'Consultas em ambiente online confidencial e protegido, em rigorosa conformidade com o Código de Ética Profissional do Conselho Federal de Psicologia (CFP).',
         },
       ],
-      note: 'Atendimento também disponível para estrangeiros e parceiros biculturais falantes de português.',
+      note: 'Atendimento para qualquer pessoa no Brasil ou no exterior, desde que fale português.',
       cta: 'Agendar Consulta Online via WhatsApp',
-      whatsappMessage: 'Olá Dra. Tatiane, gostaria de agendar uma sessão de terapia online (Brasil / Exterior).',
+      whatsappMessage: 'Olá Dra. Tatiane, gostaria de agendar uma sessão de terapia online (atendimento em português).',
     },
     testimonials: {
       tagline: 'Depoimentos',
@@ -358,12 +361,12 @@ export const CONTENT = {
         {
           question: 'Qual a duração e frequência das sessões?',
           answer:
-            'Cada sessão tem duração média de 50 minutos. A frequência usual é semanal, especialmente no início do processo, para que o vínculo e a evolução terapêutica ganhem consistência.',
+            'A duração e a frequência dos encontros são adaptadas de acordo com a modalidade terapêutica e a necessidade de cada paciente, casal ou família. O acompanhamento semanal é o formato mais comum para garantir acolhimento consistente e evolução contínua.',
         },
         {
           question: 'Como funciona a terapia online para o Brasil e Exterior?',
           answer:
-            'O atendimento é 100% online por videochamada em plataformas seguras e criptografadas. Os horários são flexíveis e adaptados ao fuso de onde você reside (Brasil, EUA, Europa, Japão e outros países), oferecendo um acolhimento humanizado em português no conforto do seu lar.',
+            'O atendimento é realizado 100% online por videochamada em plataformas seguras e criptografadas para qualquer pessoa no Brasil ou no exterior, desde que fale português, com escuta atenta, humanizada e no conforto do seu lar.',
         },
         {
           question: 'O sigilo das consultas é garantido?',
@@ -408,13 +411,13 @@ export const CONTENT = {
       formSubmit: 'Enviar pelo WhatsApp',
       formSubmitEmail: 'Enviar por E-mail',
       directContactTitle: 'Informações de Contato Direto',
-      addressLabel: 'Consultório Presencial',
-      addressValue: 'São Bernardo do Campo – SP (Atendimento com agendamento prévio)',
+      addressLabel: 'Locais de Atendimento',
+      addressValue: 'São Bernardo do Campo, 100% online, em todo o território do Brasil e exterior',
       whatsappLabel: 'WhatsApp Oficial',
       emailLabel: 'E-mail Profissional',
       instagramLabel: 'Instagram',
       hoursLabel: 'Horários de Atendimento',
-      hoursValue: 'Segunda a Sexta, das 08h às 21h | Sábados, das 08h às 14h (Horário de Brasília e compatível com EUA)',
+      hoursValue: 'Segunda a Sexta, das 08h às 21h | Sábados, das 08h às 14h (Horário de Brasília e compatível com EUA e Exterior)',
     },
     footer: {
       clinicName: 'Dra. Tatiane Vilela',
@@ -423,8 +426,12 @@ export const CONTENT = {
       navigationTitle: 'Navegação',
       servicesTitle: 'Serviços',
       contactTitle: 'Contato & Localização',
+      ethicsTitle: 'Compromisso com o Código de Ética Profissional',
+      ethicsNotice:
+        'Toda a atividade clínica e os atendimentos presenciais e online são rigorosamente conduzidos em conformidade com o Código de Ética Profissional do Psicólogo (CFP e CRP SP nº 06/98605-SP) e a Resolução CFP nº 011/2018. Garantia absoluta de sigilo, confidencialidade irrevogável, ética e acolhimento.',
       confidentialityNotice:
         'Este site segue todas as diretrizes do Código de Ética Profissional do Psicólogo e a Resolução CFP nº 011/2018 para atendimento psicológico online.',
+      locationsNotice: 'São Bernardo do Campo, 100% online, em todo o território do Brasil e exterior',
       copyright: '© 2026 Dra. Tatiane Vilela. Todos os direitos reservados.',
       emergencyNote:
         'Em caso de crise ou emergência psicológica imediata no Brasil, ligue para o CVV no número 188 ou dirija-se ao pronto-socorro mais próximo. Nos EUA, ligue ou envie SMS para 988 (Suicide & Crisis Lifeline).',
@@ -444,6 +451,7 @@ export const CONTENT = {
       home: 'Home',
       about: 'About Me',
       services: 'Services',
+      cuidadoIdeal: 'Ideal Care',
       usa: 'Brazil & Abroad',
       contact: 'Contact',
       ctaHeader: 'Book on WhatsApp',
@@ -459,16 +467,19 @@ export const CONTENT = {
       onlineBadge: '100% Online Brazil & Abroad',
       stats: [
         { label: 'Years of clinical experience', value: '+14' },
-        { label: 'Patients welcomed', value: '+1,500' },
         { label: 'Global care', value: 'Brazil & Abroad' },
+        { label: 'Confidentiality & Ethics', value: '100% Strict' },
       ],
     },
     about: {
       tagline: 'About Me',
-      title: 'A space of sensitive listening, respect, and transformation',
+      title: 'Discover my practice space, a tranquil setting, a planned sanctuary crafted to foster serenity and warmth.',
+      spaceQuote: 'Discover my space, a peaceful environment, a thoughtfully designed sanctuary with every detail crafted to foster serenity and warmth.',
+      locations: 'São Bernardo do Campo, 100% online across Brazil and abroad',
       p1: 'Hello! I am Dr. Tatiane Vilela (CRP 06/98605-SP), clinical psychologist and sexologist with over a decade dedicated to supporting emotional health, self-discovery, and the quality of human bonds.',
       p2: 'I deeply believe that therapy is a journey to reconnect with your own story. In my practice — whether in-person in São Bernardo do Campo or through online video sessions for clients across Brazil and living abroad —, you will find a strictly non-judgmental environment founded on ethical rigor, genuine warmth, and sensitive listening.',
       p3: 'My practice integrates an understanding of individual complexities, the dynamics of couples and families, and the natural reality of human sexuality as an essential pillar of vitality and wellness.',
+      p4: 'I offer in-person psychotherapy in São Bernardo do Campo and 100% online across Brazil and abroad, with warmth, ethics, and professionalism.',
       valuesTitle: 'Core pillars of my practice:',
       values: [
         {
@@ -694,32 +705,32 @@ export const CONTENT = {
       ],
     },
     usaSection: {
-      tagline: 'Border-Free Therapeutic Care',
+      tagline: 'Border-Free Online Care',
       title: 'Online Therapy for Brazil and Abroad',
-      highlightBadge: 'Therapy in Portuguese for Brazil and Worldwide Expatriates',
-      p1: 'Whether you reside anywhere in Brazil or live as an expatriate abroad — in the United States, Europe, the UK, Canada, Japan, and other countries —, nurturing your mental health in your native language is transformative.',
-      p2: 'Living abroad or going through emotional challenges requires an empathetic, highly qualified, and secure space. In therapy, the nuances of your feelings, your cultural upbringing, and your deepest struggles are understood effortlessly with zero filters.',
+      highlightBadge: 'Psychological Care in Portuguese for Clients in Brazil & Worldwide',
+      p1: 'I provide psychotherapy for anyone anywhere in the world — whether across Brazil or living abroad —, provided that the client speaks Portuguese, as all clinical consultations and sessions are conducted exclusively in Portuguese.',
+      p2: 'A welcoming, secure, ethical, and confidential space. You never have to face emotional challenges alone: wherever you reside, as long as you speak Portuguese, you will find dedicated and transformative psychological support.',
       benefits: [
         {
-          title: 'Comfort of Your Native Tongue',
-          desc: 'Expressing intimate feelings, past trauma, and vulnerabilities in your mother tongue enables deep and authentic emotional healing.',
+          title: 'Sessions Exclusively in Portuguese',
+          desc: 'All consultations and therapeutic sessions are conducted entirely in Portuguese, allowing you to convey emotions, memories, and life struggles with effortless authenticity.',
         },
         {
-          title: 'Expatriate & Diaspora Empathy',
-          desc: 'Expert psychological support for immigration challenges: acculturation stress, homesickness, loneliness, and bicultural dynamics.',
+          title: 'Barrier-Free Empathy & Understanding',
+          desc: 'Deep, compassionate understanding of your life context, whether living in Brazil or experiencing the emotional challenges of living abroad.',
         },
         {
-          title: 'Flexible International Time Zones',
-          desc: 'Scheduling harmonized with local time zones in Brazil (BRT), the United States (EST, CST, MST, PST), Europe (GMT/CET), and beyond.',
+          title: 'Comfort & Convenience Online',
+          desc: 'Sessions conducted 100% online via secure video call with total comfort, allowing you to care for your wellbeing from your own home.',
         },
         {
-          title: 'Secure & Encrypted Platform',
-          desc: 'Sessions conducted in a strictly confidential, private telehealth environment compliant with the Psychologist Code of Ethics.',
+          title: 'Privacy & Absolute Confidentiality',
+          desc: 'Therapy in a strictly confidential and protected telehealth environment, fully adhering to the Psychologist Code of Ethics.',
         },
       ],
-      note: 'Sessions are also welcoming to Portuguese-speaking foreign nationals and multicultural couples.',
+      note: 'Available for anyone residing in Brazil or abroad, as long as they speak Portuguese.',
       cta: 'Schedule Online Session via WhatsApp',
-      whatsappMessage: 'Hello Dr. Tatiane, I would like to schedule an online therapy session (Brazil / International).',
+      whatsappMessage: 'Hello Dr. Tatiane, I would like to schedule an online therapy session (in Portuguese).',
     },
     testimonials: {
       tagline: 'Testimonials',
@@ -773,7 +784,7 @@ export const CONTENT = {
         {
           question: 'What is the duration and frequency of sessions?',
           answer:
-            'Each session lasts approximately 50 minutes. The standard frequency is weekly, especially in the beginning, to establish momentum and therapeutic consistency.',
+            'The duration and frequency of sessions are tailored to the specific therapeutic modality and unique journey of each patient, couple, or family. Weekly sessions are the most common cadence to ensure depth and consistent progress.',
         },
         {
           question: 'How does online therapy work for Brazil and clients living abroad?',
@@ -823,13 +834,13 @@ export const CONTENT = {
       formSubmit: 'Send via WhatsApp',
       formSubmitEmail: 'Send via Email',
       directContactTitle: 'Direct Contact Details',
-      addressLabel: 'In-Person Practice',
-      addressValue: 'São Bernardo do Campo – SP, Brazil (By advance appointment)',
+      addressLabel: 'Care Locations',
+      addressValue: 'São Bernardo do Campo, 100% online across Brazil and abroad',
       whatsappLabel: 'Official WhatsApp',
       emailLabel: 'Professional Email',
       instagramLabel: 'Instagram',
       hoursLabel: 'Office Hours',
-      hoursValue: 'Monday to Friday, 8am to 9pm | Saturdays, 8am to 2pm (BRT / compatible with US timezones)',
+      hoursValue: 'Monday to Friday, 8am to 9pm | Saturdays, 8am to 2pm (BRT / compatible with US timezones and abroad)',
     },
     footer: {
       clinicName: 'Dra. Tatiane Vilela',
@@ -838,8 +849,12 @@ export const CONTENT = {
       navigationTitle: 'Navigation',
       servicesTitle: 'Services',
       contactTitle: 'Contact & Location',
+      ethicsTitle: 'Commitment to the Professional Ethics Code',
+      ethicsNotice:
+        'All clinical practice and care (in-person and online) are conducted in strict compliance with the Professional Psychology Code of Ethics (Federal Council of Psychology - CFP and CRP SP # 06/98605-SP) and CFP Resolution # 011/2018. Full guarantee of confidentiality, ethics, and empathetic listening.',
       confidentialityNotice:
         'This website complies with the Professional Psychology Code of Ethics and relevant regulations for online psychological consultation.',
+      locationsNotice: 'São Bernardo do Campo, 100% online across Brazil and abroad',
       copyright: '© 2026 Dra. Tatiane Vilela. All rights reserved.',
       emergencyNote:
         'In case of an immediate psychological crisis in Brazil, call 188 (CVV) or visit the nearest emergency room. In the USA, call or text 988 (Suicide & Crisis Lifeline).',

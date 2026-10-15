@@ -1,6 +1,6 @@
 export type Language = 'pt' | 'en';
 
-export type PageId = 'home' | 'sobre' | 'servicos' | 'eua' | 'contato';
+export type PageId = 'home' | 'sobre' | 'servicos' | 'cuidado-ideal' | 'eua' | 'contato';
 
 export interface ServiceItem {
   id: string;

@@ -94,7 +94,7 @@ export const InteractiveAssessment: React.FC<InteractiveAssessmentProps> = ({ la
     {
       id: 'online_eua',
       title: '100% Online nos Estados Unidos (EUA)',
-      desc: 'Sessões flexíveis adaptadas ao meu fuso horário americano (EST, CST, MST, PST).',
+      desc: 'Sessões conduzidas em língua portuguesa com total comodidade e flexibilidade.',
     },
     {
       id: 'online_br',
@@ -112,7 +112,7 @@ export const InteractiveAssessment: React.FC<InteractiveAssessmentProps> = ({ la
     {
       id: 'online_eua',
       title: '100% Online across the United States',
-      desc: 'Flexible virtual sessions adapted to my US time zone (EST, CST, MST, PST).',
+      desc: 'Virtual sessions conducted in Portuguese with total convenience and flexibility.',
     },
     {
       id: 'online_br',
@@ -157,8 +157,8 @@ export const InteractiveAssessment: React.FC<InteractiveAssessmentProps> = ({ la
           : 'Specialized Online Therapy for US Residents';
       description =
         lang === 'pt'
-          ? 'O acompanhamento ideal para você é o formato 100% Online internacional, adaptado ao seu fuso horário nos Estados Unidos, com pagamento facilitado em dólares (Zelle/Wise) e acolhimento cultural na sua língua materna.'
-          : 'The ideal care path is the 100% Online international format, fitted to your US time zone with easy payment in USD (Zelle/Wise) and deep cultural empathy in Portuguese.';
+          ? 'O acompanhamento ideal para você é o formato 100% Online internacional, com atendimento conduzido integralmente em português, praticidade de agendamento e acolhimento humano seguro.'
+          : 'The ideal care path is the 100% Online international format, conducted entirely in Portuguese, with flexible scheduling and dedicated human care.';
       prefilledMessage =
         lang === 'pt'
           ? 'Olá Dra. Tatiane, fiz o teste no site e gostaria de agendar uma sessão de Terapia Online para quem mora nos EUA.'
@@ -403,7 +403,7 @@ export const InteractiveAssessment: React.FC<InteractiveAssessmentProps> = ({ la
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#C9A227]" />
-                  <span>{lang === 'pt' ? 'Sessões de 50 minutos' : '50-minute sessions'}</span>
+                  <span>{lang === 'pt' ? 'Atendimento humanizado' : 'Humanized care'}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#C9A227]" />

@@ -11,11 +11,7 @@ import { Hero } from './components/Hero';
 import { TrustMarquee } from './components/TrustMarquee';
 import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
-import { InteractiveAssessment } from './components/InteractiveAssessment';
-import { WhyChooseSection } from './components/WhyChooseSection';
 import { UsaSection } from './components/UsaSection';
-import { PhotoGallerySection } from './components/PhotoGallerySection';
-import { TestimonialsSection } from './components/TestimonialsSection';
 import { FaqSection } from './components/FaqSection';
 import { CtaSection } from './components/CtaSection';
 import { ContactSection } from './components/ContactSection';
@@ -41,7 +37,7 @@ export default function App() {
       if (metaDesc) {
         metaDesc.setAttribute(
           'content',
-          'Consultório de Psicologia e Sexologia com Dra. Tatiane Vilela (CRP 06/98605-SP). Atendimento presencial em São Bernardo do Campo e 100% online para todo o Brasil e Estados Unidos.'
+          'Consultório de Psicologia e Sexologia com Dra. Tatiane Vilela (CRP 06/98605-SP). Atendimento em São Bernardo do Campo, 100% online, em todo o território do Brasil e exterior.'
         );
       }
     } else {
@@ -50,7 +46,7 @@ export default function App() {
       if (metaDesc) {
         metaDesc.setAttribute(
           'content',
-          'Psychology and Sexology Practice with Dr. Tatiane Vilela (CRP 06/98605-SP). In-person care in São Bernardo do Campo (Brazil) and 100% online for clients across the United States.'
+          'Psychology and Sexology Practice with Dr. Tatiane Vilela (CRP 06/98605-SP). In-person in São Bernardo do Campo, 100% online across Brazil and abroad.'
         );
       }
     }
@@ -60,7 +56,7 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
-      if (['home', 'sobre', 'servicos', 'eua', 'contato'].includes(hash)) {
+      if (['home', 'sobre', 'servicos', 'cuidado-ideal', 'eua', 'contato'].includes(hash)) {
         setCurrentPage(hash as PageId);
       }
     };
@@ -80,14 +76,11 @@ export default function App() {
   };
 
   const handleExploreServices = () => {
-    if (currentPage === 'home') {
-      const el = document.getElementById('servicos');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        return;
-      }
-    }
     handleNavigate('servicos');
+  };
+
+  const handleExploreDiagnostic = () => {
+    handleNavigate('cuidado-ideal');
   };
 
   return (
@@ -110,40 +103,44 @@ export default function App() {
             {/* Infinite Trust Marquee Ribbon */}
             <TrustMarquee lang={lang} />
 
-            {/* 2. About / Quem sou eu with Photo 4915 */}
+            {/* 2. About / Quem sou eu */}
             <AboutSection lang={lang} />
 
-            {/* 3. Services / Serviços (4 exact cards with depth) */}
-            <ServicesSection lang={lang} />
+            {/* 3. Services / Serviços Overview (Enxuto, rápido para carregar, sem imagens repetidas ou poluição) */}
+            <ServicesSection
+              lang={lang}
+              onExploreServices={handleExploreServices}
+              onExploreDiagnostic={handleExploreDiagnostic}
+            />
 
-            {/* Interactive Therapy Diagnostic Assessment Widget */}
-            <InteractiveAssessment lang={lang} />
-
-            {/* 4. Why choose me / Por que me escolher */}
-            <WhyChooseSection lang={lang} />
-
-            {/* 5. Online for Brazilians in the USA with Photo 4918 */}
+            {/* 4. Online para qualquer pessoa no Brasil e Exterior que fale Português */}
             <UsaSection lang={lang} />
 
-            {/* 6. Official Photo Gallery showcasing all 4 photos completely */}
-            <PhotoGallerySection lang={lang} />
-
-            {/* 7. Testimonials (4 realistic short reviews) */}
-            <TestimonialsSection lang={lang} />
-
-            {/* 8. FAQ */}
+            {/* 5. FAQ */}
             <FaqSection lang={lang} />
 
-            {/* 9. CTA Section (very strong) */}
+            {/* 6. CTA Section */}
             <CtaSection lang={lang} />
 
-            {/* 10. Contact / Contato */}
+            {/* 7. Contact / Contato com Logo Oficial Medallion */}
             <ContactSection lang={lang} />
           </>
         )}
 
         {currentPage === 'servicos' && (
-          <ServicesPage lang={lang} onBackToHome={() => handleNavigate('home')} />
+          <ServicesPage
+            lang={lang}
+            initialTab="areas"
+            onBackToHome={() => handleNavigate('home')}
+          />
+        )}
+
+        {currentPage === 'cuidado-ideal' && (
+          <ServicesPage
+            lang={lang}
+            initialTab="cuidado-ideal"
+            onBackToHome={() => handleNavigate('home')}
+          />
         )}
 
         {currentPage === 'sobre' && (

@@ -52,14 +52,14 @@ export const Footer: React.FC<FooterProps> = ({
               &ldquo;{lang === 'pt' ? CLINIC_INFO.sloganPt : CLINIC_INFO.sloganEn}&rdquo;
             </p>
 
-            <div className="pt-1 text-xs text-white/60 space-y-1">
-              <p className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#C9A227] shrink-0" />
-                <span>{CLINIC_INFO.city}</span>
-              </p>
-              <p className="flex items-center gap-1.5">
-                <Globe className="w-3.5 h-3.5 text-[#C9A227] shrink-0" />
-                <span>{lang === 'pt' ? CLINIC_INFO.onlineNotePt : CLINIC_INFO.onlineNoteEn}</span>
+            <div className="pt-1 text-xs text-white/70 space-y-1.5">
+              <p className="flex items-start gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-[#C9A227] shrink-0 mt-0.5" />
+                <span>
+                  {lang === 'pt'
+                    ? 'São Bernardo do Campo, 100% online, em todo o território do Brasil e exterior'
+                    : 'São Bernardo do Campo, 100% online across Brazil and abroad'}
+                </span>
               </p>
             </div>
 
@@ -127,6 +127,14 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
+                  onClick={() => onNavigate('cuidado-ideal')}
+                  className="hover:text-[#DFC56E] transition-colors cursor-pointer"
+                >
+                  {navT.cuidadoIdeal}
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => onNavigate('eua')}
                   className="hover:text-[#DFC56E] transition-colors cursor-pointer"
                 >
@@ -182,6 +190,35 @@ export const Footer: React.FC<FooterProps> = ({
               <div className="pt-2 text-[11px] text-white/50 leading-relaxed">
                 <p>{t.confidentialityNotice}</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Compromisso com o Código de Ética no rodapé */}
+        <div className="mt-12 p-6 sm:p-7 rounded-2xl bg-white/[0.04] border border-[#C9A227]/30 text-left">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+            <div className="space-y-1.5 max-w-3xl">
+              <div className="flex items-center gap-2 text-[#DFC56E]">
+                <ShieldCheck className="w-5 h-5 text-[#C9A227] shrink-0" />
+                <h4 className="text-sm sm:text-base font-serif font-bold text-white tracking-wide">
+                  {lang === 'pt'
+                    ? 'Compromisso com o Código de Ética Profissional'
+                    : 'Commitment to the Professional Ethics Code'}
+                </h4>
+              </div>
+              <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light">
+                {lang === 'pt'
+                  ? 'Toda a atividade clínica e os atendimentos (presenciais e online) são rigorosamente pautados no Código de Ética Profissional do Psicólogo (Conselho Federal de Psicologia - CFP e Conselho Regional de Psicologia - CRP SP nº 06/98605-SP) e na Resolução CFP nº 011/2018. Garantia absoluta de sigilo profissional, confidencialidade, acolhimento ético e respeito irrestrito a cada paciente.'
+                  : 'All clinical practice and psychological consultations (in-person and online) are strictly conducted under the Code of Ethics of the Federal Council of Psychology (CFP and CRP SP # 06/98605-SP) and CFP Resolution # 011/2018. Absolute guarantee of professional secrecy, privacy, ethics, and empathetic care.'}
+              </p>
+            </div>
+            <div className="shrink-0 flex flex-col items-start md:items-end gap-1 p-3 rounded-xl bg-[#161B20] border border-[#C9A227]/40">
+              <span className="text-[10px] uppercase tracking-wider text-[#DFC56E] font-semibold">
+                {lang === 'pt' ? 'Registro Profissional' : 'Professional License'}
+              </span>
+              <span className="text-sm font-bold font-mono text-white">
+                {CLINIC_INFO.crp}
+              </span>
             </div>
           </div>
         </div>

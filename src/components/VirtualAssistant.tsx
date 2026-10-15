@@ -157,7 +157,7 @@ export const VirtualAssistant: React.FC<VirtualAssistantProps> = ({ lang }) => {
     if (lang === 'pt') {
       if (query.includes('eua') || query.includes('estados unidos') || query.includes('morar fora') || query.includes('exterior') || query.includes('dolar') || query.includes('fuso')) {
         reply =
-          'A Dra. Tatiane realiza atendimento 100% ONLINE para brasileiros que moram nos Estados Unidos em todos os 50 estados (Flórida, Massachusetts, Califórnia, Nova York, Texas, etc.) e americanos que falam português! As sessões são no fuso horário do paciente (EST, CST, MST, PST) e os pagamentos são facilitados via Zelle, Wise, Cartão Internacional ou PIX.';
+          'A Dra. Tatiane realiza psicoterapia 100% ONLINE para qualquer pessoa no Brasil ou no exterior (Estados Unidos, Europa, Reino Unido, Japão e outros países), desde que a pessoa fale português, pois todo o atendimento clínico é realizado exclusivamente em língua portuguesa, com sigilo absoluto e escuta acolhedora.';
         actions = [
           {
             type: 'whatsapp',
@@ -199,7 +199,7 @@ export const VirtualAssistant: React.FC<VirtualAssistantProps> = ({ lang }) => {
         ];
       } else if (query.includes('individual') || query.includes('ansiedade') || query.includes('depressao') || query.includes('autoestima') || query.includes('luto')) {
         reply =
-          'A Terapia Individual é um processo acolhedor e profundo de autoconhecimento para lidar com ansiedade, insegurança, sobrecarga mental, luto, términos e fortalecimento da autoestima. Sessões de 50 minutos semanais.';
+          'A Terapia Individual é um processo acolhedor e profundo de autoconhecimento para lidar com ansiedade, insegurança, sobrecarga mental, luto, términos e fortalecimento da autoestima. Atendimento presencial em SBC e 100% online.';
         actions = [
           {
             type: 'whatsapp',
@@ -265,7 +265,7 @@ export const VirtualAssistant: React.FC<VirtualAssistantProps> = ({ lang }) => {
         ];
       } else if (query.includes('crp') || query.includes('quem é') || query.includes('tatiane') || query.includes('formação')) {
         reply =
-          'A Dra. Tatiane Vilela é psicóloga clínica credenciada no CRP (CRP 06/98605-SP) e especialista em Sexologia Clínica, com mais de 14 anos de experiência e mais de 1.500 pacientes acolhidos. Sua abordagem combina rigor técnico, escuta empática e zero julgamento.';
+          'A Dra. Tatiane Vilela é psicóloga clínica credenciada no CRP (CRP 06/98605-SP) e especialista em Sexologia Clínica, com mais de 14 anos de experiência clínica. Sua abordagem combina rigor técnico, escuta empática e zero julgamento.';
         actions = [
           {
             type: 'whatsapp',

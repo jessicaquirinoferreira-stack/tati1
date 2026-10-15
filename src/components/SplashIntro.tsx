@@ -20,12 +20,12 @@ export const SplashIntro: React.FC<SplashIntroProps> = ({ onComplete, lang }) =>
   useEffect(() => {
     const imagesToPreload = [
       ASSETS.logo,
+      ASSETS.headerLogo,
+      ASSETS.sealLogo,
       ASSETS.hero,
       ASSETS.about,
       ASSETS.usa,
       ASSETS.space,
-      ASSETS.presentation1,
-      ASSETS.presentation2,
     ];
 
     let loaded = 0;

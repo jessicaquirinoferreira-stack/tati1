@@ -75,40 +75,37 @@ export const AboutPage: React.FC<AboutPageProps> = ({ lang, onBackToHome }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
           <div className="lg:col-span-7 space-y-5 text-sm sm:text-base text-[#475467] leading-relaxed">
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#111417]">
-              {t.title}
+              {lang === 'pt'
+                ? 'Conheça o meu espaço, um ambiente tranquilo, um refúgio planejado, cada detalhe pra promover serenidade e acolhimento.'
+                : t.title}
             </h2>
             <p>{t.p1}</p>
             <p>{t.p2}</p>
             <p>{t.p3}</p>
-
-            <div className="p-6 rounded-2xl bg-white border border-[#EDE6DC] shadow-xs space-y-3">
-              <h3 className="text-base font-serif font-bold text-[#111417] flex items-center gap-2">
-                <Award className="w-5 h-5 text-[#C9A227]" />
-                <span>{lang === 'pt' ? 'Compromisso com o Código de Ética' : 'Commitment to the Ethics Code'}</span>
-              </h3>
-              <p className="text-xs sm:text-sm text-[#525E6A] leading-relaxed">
-                {lang === 'pt'
-                  ? 'Toda a atividade clínica é exercida sob a chancela do Conselho Regional de Psicologia (CRP SP nº 06/98605-SP), garantindo proteção jurídica, confidencialidade irrevogável e aperfeiçoamento científico contínuo.'
-                  : 'All clinical practice is conducted under the licensing of the Regional Council of Psychology (CRP SP # 06/98605-SP), ensuring full legal protection, irrevocable confidentiality, and continual scientific development.'}
-              </p>
-            </div>
+            <p>{t.p4}</p>
           </div>
 
           <div className="lg:col-span-5 space-y-6">
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-[#EDE6DC]">
-              <img
-                src={ASSETS.clinic}
-                alt="Consultório Terapêutico da Dra. Tatiane Vilela"
-                className="w-full aspect-[2/3] max-h-[500px] object-cover object-top"
-              />
-              <div className="p-5 bg-white text-xs text-[#525E6A]">
-                <p className="font-semibold text-[#111417] text-sm mb-1">
-                  {lang === 'pt' ? 'O Ambiente Terapêutico' : 'The Therapeutic Setting'}
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-[#EDE6DC] bg-white">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#0A0C0E]">
+                <img
+                  src={ASSETS.clinic}
+                  alt="Conheça o meu espaço - Consultório Dra. Tatiane Vilela"
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                />
+                <div className="absolute top-3 left-3 bg-[#111417]/85 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-[#DFC56E] border border-[#C9A227]/40">
+                  {lang === 'pt' ? 'Conheça o meu espaço' : 'My Practice Space'}
+                </div>
+              </div>
+              <div className="p-5 bg-white text-xs text-[#525E6A] space-y-2">
+                <p className="font-serif font-bold text-[#111417] text-sm">
+                  {lang === 'pt' ? 'Conheça o meu espaço' : 'Discover My Space'}
                 </p>
-                <p>
+                <p className="text-[#303841] leading-relaxed italic">
                   {lang === 'pt'
-                    ? 'Um refúgio planejado em cada detalhe para promover serenidade, acolhimento e profunda segurança emocional.'
-                    : 'A sanctuary thoughtfully designed in every detail to foster serenity, warmth, and deep emotional security.'}
+                    ? '“Conheça o meu espaço, um ambiente tranquilo, um refúgio planejado, cada detalhe pra promover serenidade e acolhimento.”'
+                    : '“Discover my space, a peaceful environment, a thoughtfully designed sanctuary with every detail crafted to foster serenity and warmth.”'}
                 </p>
               </div>
             </div>
@@ -117,13 +114,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ lang, onBackToHome }) => {
               <p className="font-bold uppercase tracking-wider text-[#8C631A]">
                 {lang === 'pt' ? 'Locais de Atendimento' : 'Care Locations'}
               </p>
-              <p className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-[#C9A227] shrink-0" />
-                <span>São Bernardo do Campo – SP (Consultório Presencial)</span>
-              </p>
-              <p className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#C9A227] shrink-0" />
-                <span>100% Online em todo o território do Brasil e nos Estados Unidos</span>
+              <p className="flex items-start gap-2 text-sm text-[#111417] font-medium">
+                <MapPin className="w-4 h-4 text-[#C9A227] shrink-0 mt-0.5" />
+                <span>
+                  {lang === 'pt'
+                    ? 'São Bernardo do Campo, 100% online, em todo o território do Brasil e exterior'
+                    : 'São Bernardo do Campo, 100% online across Brazil and abroad'}
+                </span>
               </p>
             </div>
           </div>

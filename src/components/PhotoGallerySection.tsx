@@ -47,18 +47,21 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({ lang }
     },
     {
       src: ASSETS.space,
-      aspect: 'aspect-[2/3]',
-      title: lang === 'pt' ? 'Conheça o Meu Espaço Terapêutico' : 'The Therapeutic Sanctuary',
-      subtitle: lang === 'pt' ? 'Presencial em SBC e 100% Online' : 'In-Person in SBC & 100% Online',
+      aspect: 'aspect-[4/3]',
+      title: lang === 'pt' ? 'Conheça o Meu Espaço' : 'Discover My Practice Space',
+      subtitle:
+        lang === 'pt'
+          ? 'São Bernardo do Campo, 100% online, em todo o território do Brasil e exterior'
+          : 'São Bernardo do Campo, 100% online across Brazil and abroad',
       desc:
         lang === 'pt'
-          ? 'Ambiente acolhedor estruturado para conversas reais, com total privacidade e serenidade. Escuta, respeito, acolhimento, evolução e mais você em cada sessão.'
-          : 'A comforting setting structured for genuine conversations with total privacy and serenity. Listening, respect, warmth, personal growth, and authentic self.',
-      tag: lang === 'pt' ? 'O Consultório' : 'The Practice',
+          ? 'Conheça o meu espaço, um ambiente tranquilo, um refúgio planejado, cada detalhe pra promover serenidade e acolhimento.'
+          : 'Discover my space, a peaceful environment, a thoughtfully designed sanctuary with every detail crafted to foster serenity and warmth.',
+      tag: lang === 'pt' ? 'Conheça o Meu Espaço' : 'My Practice Space',
       whatsappMsg:
         lang === 'pt'
-          ? 'Olá Dra. Tatiane, gostaria de conhecer o consultório e agendar uma consulta.'
-          : 'Hello Dr. Tatiane, I would like to learn about the clinic and schedule a session.',
+          ? 'Olá Dra. Tatiane, gostaria de agendar uma consulta no consultório ou online.'
+          : 'Hello Dr. Tatiane, I would like to schedule a session in-person or online.',
       icon: MapPin,
     },
   ];

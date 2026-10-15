@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Language } from '../types';
 import { CLINIC_INFO, CONTENT, buildWhatsAppLink } from '../data/translations';
+import { ASSETS } from '../assets';
 import { MessageCircle, Mail, MapPin, Instagram, Clock, Send, CheckCircle2 } from 'lucide-react';
 
 interface ContactSectionProps {
@@ -66,17 +67,36 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
   return (
     <section id="contato" className="py-16 lg:py-24 bg-[#FBF9F5] text-[#161B20]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {/* Header with Official Circular Seal Logo Medallion */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs uppercase tracking-widest text-[#8C631A] font-semibold">
+          {/* Logo antes de "Vamos conversar" */}
+          <div className="flex justify-center mb-5">
+            <div className="relative group">
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-[#C9A227]/30 via-[#DFC56E]/20 to-[#8C631A]/20 blur-lg opacity-70 group-hover:opacity-100 transition-opacity" />
+              <img
+                src={ASSETS.sealLogo}
+                alt="Logo Oficial Dra. Tatiane Vilela - Psicóloga e Sexóloga"
+                className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full object-contain shadow-2xl border-2 border-[#C9A227]/50 bg-white p-1 transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+          </div>
+
+          {/* Vamos conversar */}
+          <span className="text-xs uppercase tracking-widest text-[#8C631A] font-semibold block">
             {t.tagline}
           </span>
+
+          {/* Nome */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#111417] mt-2 leading-tight">
-            {t.title}
+            {CLINIC_INFO.name}
           </h2>
-          <p className="text-base sm:text-lg text-[#525E6A] mt-3 font-light">
-            {t.subtitle}
-          </p>
+
+          {/* Psicóloga e Sexóloga, CRP */}
+          <div className="flex items-center justify-center gap-2 text-sm sm:text-base text-[#734F1B] font-medium mt-2">
+            <span>{lang === 'pt' ? CLINIC_INFO.titlePt : CLINIC_INFO.titleEn}</span>
+            <span className="text-[#C9A227] font-bold">·</span>
+            <span className="font-mono text-xs sm:text-sm text-[#525E6A] font-semibold">{CLINIC_INFO.crp}</span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

@@ -2,7 +2,7 @@ import React from 'react';
 import { Language } from '../types';
 import { CONTENT, buildWhatsAppLink } from '../data/translations';
 import { ASSETS } from '../assets';
-import { MessageCircle, Globe, Clock, Sparkles, CheckCircle2, Shield, HeartHandshake } from 'lucide-react';
+import { MessageCircle, Globe, Video, Sparkles, CheckCircle2, Shield, HeartHandshake } from 'lucide-react';
 
 interface UsaSectionProps {
   lang: Language;
@@ -15,34 +15,30 @@ export const UsaSection: React.FC<UsaSectionProps> = ({ lang }) => {
   const benefitIcons = [
     <HeartHandshake className="w-5 h-5 text-[#C9A227]" key="heart" />,
     <Globe className="w-5 h-5 text-[#C9A227]" key="globe" />,
-    <Clock className="w-5 h-5 text-[#C9A227]" key="clock" />,
+    <Video className="w-5 h-5 text-[#C9A227]" key="video" />,
     <Shield className="w-5 h-5 text-[#C9A227]" key="shield" />,
   ];
 
   const regions = [
     {
       flag: '🇧🇷',
-      region: lang === 'pt' ? 'Brasil (Nacional)' : 'Brazil (National)',
-      detail: lang === 'pt' ? 'Todos os 26 estados + Distrito Federal e presencial em SP' : 'All 26 states + Federal District and in-person in SP',
-      time: 'Horário de Brasília (BRT)',
+      region: lang === 'pt' ? 'Brasil' : 'Brazil',
+      detail: lang === 'pt' ? 'Presencial em São Bernardo do Campo (SP) e 100% online para todo o país' : 'In-person in São Bernardo do Campo (SP) and 100% online nationwide',
     },
     {
       flag: '🇺🇸',
       region: lang === 'pt' ? 'Estados Unidos' : 'United States',
-      detail: lang === 'pt' ? 'Comunidade brasileira nos 50 estados (FL, MA, NY, CA, TX...)' : 'Brazilian community in all 50 states (FL, MA, NY, CA, TX...)',
-      time: 'EST, CST, MST, PST',
+      detail: lang === 'pt' ? 'Atendimento online em português para quem reside nos EUA (todos os 50 estados)' : 'Online therapy in Portuguese across all 50 US states',
     },
     {
       flag: '🇪🇺',
       region: lang === 'pt' ? 'Europa & Reino Unido' : 'Europe & UK',
-      detail: lang === 'pt' ? 'Portugal, Inglaterra, Irlanda, Alemanha, Espanha, Suíça...' : 'Portugal, UK, Ireland, Germany, Spain, Switzerland...',
-      time: 'WET, CET, GMT',
+      detail: lang === 'pt' ? 'Portugal, Inglaterra, Irlanda, Espanha, Alemanha, Suíça e outros países' : 'Portugal, England, Ireland, Spain, Germany, Switzerland and beyond',
     },
     {
       flag: '🌏',
-      region: lang === 'pt' ? 'Canadá, Ásia & Oceania' : 'Canada, Asia & Oceania',
-      detail: lang === 'pt' ? 'Brasileiros no Canadá, Japão, Austrália e outros países' : 'Brazilians in Canada, Japan, Australia and beyond',
-      time: lang === 'pt' ? 'Agenda flexível adaptada' : 'Flexible adapted slots',
+      region: lang === 'pt' ? 'Canadá, Japão & Oceania' : 'Canada, Japan & Oceania',
+      detail: lang === 'pt' ? 'Para qualquer pessoa que fale português em qualquer continente' : 'For anyone who speaks Portuguese across any continent',
     },
   ];
 
@@ -50,7 +46,7 @@ export const UsaSection: React.FC<UsaSectionProps> = ({ lang }) => {
     <section id="eua" className="py-20 lg:py-28 bg-[#0F1215] text-[#FBF9F5] relative overflow-hidden border-t border-[#C9A227]/30">
       {/* Background ambient glow */}
       <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#C9A227]/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Flags & Header */}
@@ -71,20 +67,22 @@ export const UsaSection: React.FC<UsaSectionProps> = ({ lang }) => {
           </p>
         </div>
 
-        {/* Master Showcase Visual: 5045.jpg fully complete and perfectly framed */}
-        <div className="mb-14 max-w-5xl mx-auto">
+        {/* Master Showcase Visual: Real photo of Dra. Tatiane Vilela */}
+        <div className="mb-14 max-w-2xl mx-auto">
           <div className="relative group">
             {/* Glowing gold ambient background */}
-            <div className="absolute -inset-2 bg-gradient-to-r from-[#C9A227]/30 via-emerald-500/20 to-[#C9A227]/30 rounded-3xl blur-xl opacity-50 group-hover:opacity-80 transition duration-700 pointer-events-none" />
+            <div className="absolute -inset-2 bg-gradient-to-r from-[#C9A227]/30 via-amber-500/20 to-[#C9A227]/30 rounded-3xl blur-xl opacity-60 group-hover:opacity-85 transition duration-700 pointer-events-none" />
 
-            {/* Container displaying the full 16:9 photo without cropping */}
+            {/* Container displaying the portrait photo without awkward cropping */}
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-[#C9A227]/40 bg-[#0A0C0E]">
-              <img
-                src={ASSETS.urls.photo5045 || ASSETS.usa}
-                alt="Dra. Tatiane Vilela - Terapia Online para Brasil e Exterior"
-                className="w-full aspect-video sm:aspect-[16/9] object-contain sm:object-cover object-center filter contrast-[1.02] block"
-                loading="eager"
-              />
+              <div className="relative p-2 sm:p-4 bg-gradient-to-b from-[#181E24] to-[#0A0C0E] flex items-center justify-center">
+                <img
+                  src={ASSETS.usa}
+                  alt="Dra. Tatiane Vilela - Terapia Online em Português para Brasil e Exterior"
+                  className="w-full max-h-[520px] object-cover object-top rounded-xl shadow-lg block filter contrast-[1.02]"
+                  loading="eager"
+                />
+              </div>
 
               {/* Status Ribbon below the photo */}
               <div className="p-3.5 sm:p-4 bg-[#111417]/95 backdrop-blur-md border-t border-[#C9A227]/30 flex flex-wrap items-center justify-between gap-3 text-xs text-white/80">
@@ -95,7 +93,7 @@ export const UsaSection: React.FC<UsaSectionProps> = ({ lang }) => {
                   </span>
                   <span className="text-white/40 hidden sm:inline">|</span>
                   <span className="text-[#DFC56E] hidden sm:inline">
-                    {lang === 'pt' ? 'Brasil & Exterior' : 'Brazil & International'}
+                    {lang === 'pt' ? 'Atendimento em Português' : 'Conducted in Portuguese'}
                   </span>
                 </div>
 
@@ -106,7 +104,7 @@ export const UsaSection: React.FC<UsaSectionProps> = ({ lang }) => {
                   </span>
                   <span className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>{lang === 'pt' ? 'Plataforma Telepsicologia' : 'Telehealth Platform'}</span>
+                    <span>{lang === 'pt' ? 'CRP 06/98605-SP' : 'CRP 06/98605-SP'}</span>
                   </span>
                 </div>
               </div>
@@ -126,7 +124,7 @@ export const UsaSection: React.FC<UsaSectionProps> = ({ lang }) => {
             </p>
           </div>
 
-          {/* 4 Feature cards (No payment references) */}
+          {/* 4 Feature cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {t.benefits.map((b, idx) => (
               <div
@@ -148,31 +146,28 @@ export const UsaSection: React.FC<UsaSectionProps> = ({ lang }) => {
             ))}
           </div>
 
-          {/* Global Coverage & Time Zones Card */}
+          {/* Global Coverage Without Timezones */}
           <div className="p-6 rounded-2xl bg-[#161B20] border border-[#C9A227]/30 space-y-4 text-left">
             <div className="flex items-center justify-between text-xs sm:text-sm font-semibold text-[#DFC56E]">
               <span className="flex items-center gap-2">
                 <Globe className="w-4 h-4 text-[#C9A227]" />
                 {lang === 'pt'
-                  ? 'Cobertura Global & Fusos Horários Flexíveis:'
-                  : 'Global Reach & Flexible Time Zones:'}
+                  ? 'Atendimento em português sem fronteiras geográficas:'
+                  : 'Border-free care in Portuguese across global regions:'}
               </span>
               <span className="text-white/60 font-mono text-[11px]">Online Segunda a Sábado</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
               {regions.map((reg, i) => (
-                <div key={i} className="p-3.5 rounded-xl bg-[#0F1215] border border-white/5 flex flex-col justify-between space-y-1.5">
+                <div key={i} className="p-3.5 rounded-xl bg-[#0F1215] border border-white/5 flex flex-col justify-between space-y-2">
                   <div className="flex items-center gap-2">
                     <span className="text-lg">{reg.flag}</span>
                     <span className="font-bold text-white text-xs">{reg.region}</span>
                   </div>
-                  <p className="text-[11px] text-white/60 font-light leading-snug">
+                  <p className="text-[11px] text-white/70 font-light leading-snug">
                     {reg.detail}
                   </p>
-                  <span className="text-[10px] text-[#DFC56E] font-mono font-medium">
-                    {reg.time}
-                  </span>
                 </div>
               ))}
             </div>
