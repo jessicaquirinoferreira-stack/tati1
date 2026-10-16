@@ -13,17 +13,17 @@ export const ASSETS = {
   logo: logoDourado,
   logoUrl: 'https://i.postimg.cc/JntDmhdW/Logo-Dourado-Tatiane-Vilela.png',
   // Official Emblem / Header Logo (Transparent Monogram)
-  emblem: emblemClean,
-  headerLogo: emblemClean,
+  emblem: 'https://i.postimg.cc/FsNKXR24/MONOGRAMA-SEM-ESCRITAS.png',
+  headerLogo: 'https://i.postimg.cc/FsNKXR24/MONOGRAMA-SEM-ESCRITAS.png',
   // Official Medallion / Circular Seal Logo
   sealLogo: 'https://i.postimg.cc/9XN7k7b9/IMG-20261014-WA0176.jpg',
 
   // Master Hero Photo with Armchair and Bookshelf (Dra. Tatiane in clinic)
-  hero: 'https://i.postimg.cc/WzGWScqM/Retrato-Profissional-no-Escritorio-Aconchegante.png',
-  heroBackground: 'https://i.postimg.cc/WzGWScqM/Retrato-Profissional-no-Escritorio-Aconchegante.png',
+  hero: 'https://i.postimg.cc/xjKdZHF9/Whats-App-Image-2026-10-16-at-19-39-56.jpg',
+  heroBackground: 'https://i.postimg.cc/xjKdZHF9/Whats-App-Image-2026-10-16-at-19-39-56.jpg',
   about: 'https://i.postimg.cc/CxVqs4Pk/5432.jpg', // Photo 2: About / Quem sou eu (Dra. Tatiane Vilela portrait)
-  usa: 'https://i.postimg.cc/fT4PYJXh/IMG-20261014-WA0173.jpg',               // Photo 3: Online Therapy Brasil & Exterior (real photo of Dra. Tatiane Vilela)
-  onlineGlobal: 'https://i.postimg.cc/fT4PYJXh/IMG-20261014-WA0173.jpg',      // Master photo for global online therapy
+  usa: 'https://i.postimg.cc/jjPzk2p1/Whats-App-Image-2026-10-16-at-20-24-49.jpg',               // Photo 3: Online Therapy Brasil & Exterior (real photo of Dra. Tatiane Vilela)
+  onlineGlobal: 'https://i.postimg.cc/jjPzk2p1/Whats-App-Image-2026-10-16-at-20-24-49.jpg',      // Master photo for global online therapy
   space: 'https://i.postimg.cc/sxYnD4wn/5346.jpg',             // Photo 4: Conheça o meu espaço (Consultório Dra. Tatiane Vilela)
   clinic: 'https://i.postimg.cc/sxYnD4wn/5346.jpg',            // Alias for clinic space
   presentation1: photoUnnamed2, // Photo 5: Registro & Apresentação (white blazer in office)

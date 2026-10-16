@@ -1,8 +1,8 @@
 import React from 'react';
 import { Language } from '../types';
-import { CLINIC_INFO, CONTENT, buildWhatsAppLink } from '../data/translations';
+import { CLINIC_INFO, buildWhatsAppLink } from '../data/translations';
 import { ASSETS } from '../assets';
-import { MessageCircle, Award, BookOpen, Heart, Shield, CheckCircle2, MapPin } from 'lucide-react';
+import { MessageCircle, Heart, MapPin, Sparkles, CheckCircle2 } from 'lucide-react';
 
 interface AboutPageProps {
   lang: Language;
@@ -10,120 +10,160 @@ interface AboutPageProps {
 }
 
 export const AboutPage: React.FC<AboutPageProps> = ({ lang, onBackToHome }) => {
-  const t = CONTENT[lang].about;
   const whatsappUrl = buildWhatsAppLink(
     lang === 'pt'
-      ? 'Olá Dra. Tatiane, gostaria de agendar uma primeira conversa.'
-      : 'Hello Dr. Tatiane, I would like to schedule an introductory conversation.'
+      ? 'Olá Dra. Tatiane, gostaria de agendar uma consulta.'
+      : 'Hello Dr. Tatiane, I would like to schedule a consultation.'
   );
 
   return (
-    <div className="py-12 bg-[#FBF9F5] text-[#161B20] text-left">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Back link */}
-        <div className="mb-6 flex items-center justify-between">
+    <div className="py-10 sm:py-14 bg-[#FBF9F5] text-[#161B20] text-left">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
+        {/* Navigation Bar */}
+        <div className="flex items-center justify-between border-b border-[#EDE6DC] pb-4">
           <button
             type="button"
             onClick={onBackToHome}
-            className="text-xs sm:text-sm font-semibold text-[#8C631A] hover:underline flex items-center gap-1 cursor-pointer"
+            className="text-xs sm:text-sm font-semibold text-[#8C631A] hover:underline flex items-center gap-1.5 cursor-pointer"
           >
             ← {lang === 'pt' ? 'Voltar para o início' : 'Back to home'}
           </button>
-          <span className="text-xs text-[#525E6A] font-mono">{CLINIC_INFO.crp}</span>
+          <span className="text-xs text-[#7A6B5D] font-mono tracking-wider font-semibold">
+            {CLINIC_INFO.crp}
+          </span>
         </div>
 
-        {/* Hero Banner with Dra. Tatiane's Portrait */}
-        <div className="bg-[#111417] text-white rounded-3xl p-8 sm:p-12 mb-16 relative overflow-hidden border border-[#C9A227]/30">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-4">
-              <span className="text-xs uppercase tracking-widest text-[#DFC56E] font-semibold">
-                {lang === 'pt' ? 'Trajetória & Filosofia Clínica' : 'Clinical Journey & Philosophy'}
-              </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white leading-tight">
-                {CLINIC_INFO.name}
-              </h1>
-              <p className="text-base sm:text-lg text-[#C9A227] font-medium">
-                {lang === 'pt' ? CLINIC_INFO.titlePt : CLINIC_INFO.titleEn} · {CLINIC_INFO.crp}
-              </p>
-              <p className="text-sm sm:text-base text-white/80 max-w-2xl font-light leading-relaxed">
-                &ldquo;{lang === 'pt' ? CLINIC_INFO.sloganPt : CLINIC_INFO.sloganEn}&rdquo;
-              </p>
-              <div className="pt-2">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-md transition-all"
-                >
-                  <MessageCircle className="w-4 h-4 fill-white" />
-                  <span>{lang === 'pt' ? 'Falar com a Dra. Tatiane no WhatsApp' : 'Chat with Dr. Tatiane on WhatsApp'}</span>
-                </a>
-              </div>
-            </div>
+        {/* =========================================================================
+            SEÇÃO 1: MINHA TRAJETÓRIA PROFISSIONAL
+            (Foto de Tatiane Vilela sem quadro preto, com texto integral fornecido)
+           ========================================================================= */}
+        <section className="space-y-8">
+          {/* Header Title */}
+          <div className="border-l-4 border-[#C9A227] pl-4 sm:pl-5">
+            <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#8C631A] font-bold">
+              {lang === 'pt' ? 'Trajetória & Atuação' : 'Journey & Practice'}
+            </span>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#161B20] tracking-tight mt-1">
+              {lang === 'pt' ? 'MINHA TRAJETÓRIA PROFISSIONAL' : 'MY PROFESSIONAL JOURNEY'}
+            </h1>
+          </div>
 
-            <div className="lg:col-span-4 flex justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Foto de Tatiane Vilela aberta, natural e sem quadrado */}
+            <div className="lg:col-span-5 flex flex-col items-center lg:items-start">
               <img
                 src={ASSETS.about}
-                alt="Dra. Tatiane Vilela"
-                className="w-52 h-52 sm:w-64 sm:h-64 rounded-3xl object-cover object-top border-4 border-[#C9A227] shadow-2xl"
+                alt="Dra. Tatiane Vilela - Psicóloga e Sexóloga"
+                className="w-full max-w-md h-auto object-contain rounded-2xl drop-shadow-xl block"
               />
+              <div className="mt-3 text-center lg:text-left">
+                <p className="font-serif font-bold text-lg text-[#161B20]">
+                  Dra. Tatiane Vilela
+                </p>
+                <p className="text-xs sm:text-sm text-[#8C631A] font-semibold tracking-wide mt-0.5">
+                  Psicóloga & Sexóloga · {CLINIC_INFO.crp}
+                </p>
+              </div>
+            </div>
+
+            {/* Texto integral da Trajetória Profissional */}
+            <div className="lg:col-span-7 space-y-4 text-sm sm:text-base text-[#303841] leading-relaxed font-normal">
+              <p>
+                Sou Tatiane Vilela, psicóloga e sexóloga, graduada em Psicologia pela Universidade Metodista de São Paulo e especialista em Sexualidade Humana pela Faculdade de Medicina da Fundação do ABC, com formação de pós-graduação pelo Novos Paradigmas em Saúde Sexual.
+              </p>
+              <p>
+                Minha atuação é pautada por uma compreensão integral do ser humano, considerando suas emoções, pensamentos, comportamentos, relacionamentos e experiências de vida. Acredito que cada história é única e merece ser acolhida com respeito, escuta qualificada e sem julgamentos.
+              </p>
+              <p>
+                Ofereço psicoterapia individual, de casal e familiar, além de atendimento especializado em questões relacionadas à sexualidade humana. Meu trabalho contempla os desafios emocionais, os conflitos nos relacionamentos, as dificuldades de comunicação, as questões relacionadas à intimidade e ao desejo, bem como os diferentes momentos e transições da vida.
+              </p>
+              <p>
+                Na psicoterapia, cada pessoa ou casal encontra a oportunidade de compreender melhor suas experiências, reconhecer padrões, elaborar sentimentos e desenvolver novas possibilidades para lidar com suas dificuldades.
+              </p>
+              <p className="font-medium text-[#161B20] bg-white p-4 rounded-2xl border border-[#EDE6DC] shadow-xs">
+                Meu compromisso é oferecer um acompanhamento profissional ético, cuidadoso e individualizado, respeitando a singularidade de cada história e as necessidades de cada processo terapêutico.
+              </p>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Deep Narrative & Office Experience */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
-          <div className="lg:col-span-7 space-y-5 text-sm sm:text-base text-[#475467] leading-relaxed">
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#111417]">
-              {lang === 'pt'
-                ? 'Conheça o meu espaço, um ambiente tranquilo, um refúgio planejado, cada detalhe pra promover serenidade e acolhimento.'
-                : t.title}
+        {/* Separador Elegante */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-[#C9A227]/40 to-transparent my-6" />
+
+        {/* =========================================================================
+            SEÇÃO 2: O ESPAÇO E ACOLHIMENTO
+            (Foto do Consultório + texto integral fornecido)
+           ========================================================================= */}
+        <section className="space-y-8">
+          {/* Header Title */}
+          <div className="border-l-4 border-[#8C631A] pl-4 sm:pl-5">
+            <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#8C631A] font-bold">
+              {lang === 'pt' ? 'Ambiente Clínico' : 'Clinical Space'}
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#161B20] tracking-tight mt-1">
+              {lang === 'pt' ? 'O ESPAÇO E ACOLHIMENTO' : 'THE SPACE & WARMTH'}
             </h2>
-            <p>{t.p1}</p>
-            <p>{t.p2}</p>
-            <p>{t.p3}</p>
-            <p>{t.p4}</p>
           </div>
 
-          <div className="lg:col-span-5 space-y-6">
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-[#EDE6DC] bg-white">
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#0A0C0E]">
-                <img
-                  src={ASSETS.clinic}
-                  alt="Conheça o meu espaço - Consultório Dra. Tatiane Vilela"
-                  className="w-full h-full object-cover object-center"
-                  loading="lazy"
-                />
-                <div className="absolute top-3 left-3 bg-[#111417]/85 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-[#DFC56E] border border-[#C9A227]/40">
-                  {lang === 'pt' ? 'Conheça o meu espaço' : 'My Practice Space'}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Texto integral do Espaço e Acolhimento */}
+            <div className="lg:col-span-7 space-y-4 text-sm sm:text-base text-[#303841] leading-relaxed font-normal order-2 lg:order-1">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#161B20]">
+                Um espaço preparado para acolher você
+              </h3>
+              <p>
+                Meu consultório foi pensado para oferecer um ambiente tranquilo, confortável e acolhedor, onde você possa se sentir à vontade para falar sobre suas emoções, compartilhar suas experiências e olhar para si com mais atenção.
+              </p>
+              <p>
+                Cada detalhe do espaço foi escolhido para transmitir aconchego e serenidade, proporcionando um ambiente reservado para a escuta, a reflexão e o cuidado com a saúde emocional.
+              </p>
+              <p>
+                Acredito que iniciar a psicoterapia é um passo importante, e encontrar um espaço em que você se sinta respeitado e acolhido pode tornar essa experiência mais confortável. Você não precisa chegar com todas as respostas ou saber exatamente por onde começar. O processo terapêutico é construído ao longo dos encontros, com tempo, escuta e acompanhamento profissional.
+              </p>
+              <div className="p-4 rounded-2xl bg-white border border-[#EDE6DC] text-sm text-[#161B20] space-y-1.5 shadow-xs">
+                <div className="flex items-start gap-2 text-[#8C631A] font-semibold text-xs uppercase tracking-wider">
+                  <MapPin className="w-4 h-4 shrink-0 text-[#C9A227] mt-0.5" />
+                  <span>Atendimento Presencial e Online</span>
                 </div>
-              </div>
-              <div className="p-5 bg-white text-xs text-[#525E6A] space-y-2">
-                <p className="font-serif font-bold text-[#111417] text-sm">
-                  {lang === 'pt' ? 'Conheça o meu espaço' : 'Discover My Space'}
-                </p>
-                <p className="text-[#303841] leading-relaxed italic">
-                  {lang === 'pt'
-                    ? '“Conheça o meu espaço, um ambiente tranquilo, um refúgio planejado, cada detalhe pra promover serenidade e acolhimento.”'
-                    : '“Discover my space, a peaceful environment, a thoughtfully designed sanctuary with every detail crafted to foster serenity and warmth.”'}
+                <p className="text-[#303841] text-xs sm:text-sm">
+                  Realizo atendimentos presenciais em São Bernardo do Campo, São Paulo, e psicoterapia on-line para pessoas que vivem no Brasil e no exterior, conforme as normas profissionais aplicáveis.
                 </p>
               </div>
+              <p className="font-serif italic font-medium text-[#161B20] text-base pt-2">
+                &ldquo;Um espaço para acolher sua história, compreender suas emoções e construir novos caminhos.&rdquo;
+              </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[#F4EFEA] border border-[#ECDDA3] text-xs text-[#60421C] space-y-2">
-              <p className="font-bold uppercase tracking-wider text-[#8C631A]">
-                {lang === 'pt' ? 'Locais de Atendimento' : 'Care Locations'}
-              </p>
-              <p className="flex items-start gap-2 text-sm text-[#111417] font-medium">
-                <MapPin className="w-4 h-4 text-[#C9A227] shrink-0 mt-0.5" />
-                <span>
-                  {lang === 'pt'
-                    ? 'São Bernardo do Campo, 100% online, em todo o território do Brasil e exterior'
-                    : 'São Bernardo do Campo, 100% online across Brazil and abroad'}
-                </span>
-              </p>
+            {/* Foto do Consultório aberta, natural e sem quadrado */}
+            <div className="lg:col-span-5 flex flex-col items-center lg:items-end order-1 lg:order-2">
+              <img
+                src={ASSETS.clinic}
+                alt="Consultório acolhedor - Dra. Tatiane Vilela"
+                className="w-full max-w-lg h-auto object-contain rounded-2xl drop-shadow-xl block"
+              />
+              <div className="mt-3 text-center lg:text-right">
+                <p className="font-serif font-bold text-base sm:text-lg text-[#161B20]">
+                  Consultório de Psicologia & Sexologia
+                </p>
+                <p className="text-xs sm:text-sm text-[#7A6B5D] mt-0.5">
+                  Ambiente planejado para serenidade, sigilo e conforto
+                </p>
+              </div>
             </div>
           </div>
+        </section>
+
+        {/* CTA no Rodapé da Página */}
+        <div className="text-center pt-4 pb-2">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-sm font-semibold bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-xl transition-all"
+          >
+            <MessageCircle className="w-5 h-5 fill-white" />
+            <span>{lang === 'pt' ? 'Agendar consulta no WhatsApp' : 'Schedule on WhatsApp'}</span>
+          </a>
         </div>
       </div>
     </div>

@@ -54,54 +54,78 @@ export const UsaPage: React.FC<UsaPageProps> = ({ lang, onBackToHome }) => {
           </div>
         </div>
 
-        {/* Hero Banner with Dra. Tatiane Vilela portrait photo */}
-        <div className="bg-[#111417] text-white rounded-3xl p-6 sm:p-10 lg:p-12 mb-16 relative overflow-hidden border border-[#C9A227]/30 shadow-2xl">
-          <div className="max-w-4xl mx-auto text-center space-y-4 mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C9A227]/20 text-[#DFC56E] border border-[#C9A227]/40 text-xs font-medium">
-              <span>🇧🇷</span>
-              <span>{t.highlightBadge}</span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white leading-tight">
-              {t.title}
-            </h1>
-            <p className="text-base sm:text-lg text-white/85 max-w-3xl mx-auto font-light leading-relaxed">
-              {t.p1}
-            </p>
-          </div>
+        {/* Hero Banner - Open and Natural layout like Início (sem quadro preto) */}
+        <section className="relative overflow-hidden bg-gradient-to-r from-[#111417] via-[#161B20] to-[#201811] text-white rounded-3xl p-6 sm:p-10 lg:p-12 mb-16 border border-[#C9A227]/30 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 space-y-5 text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#5EEAD4] text-xs font-semibold tracking-wider uppercase">
+                <span className="w-2 h-2 rounded-full bg-[#34D399] animate-pulse" />
+                <span>{lang === 'pt' ? 'Atendimento Online Global' : 'Global Online Therapy'}</span>
+              </div>
 
-          {/* Dra. Tatiane Vilela Real Portrait Showcase */}
-          <div className="max-w-md mx-auto rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#C9A227]/40 shadow-2xl bg-[#0A0C0E] mb-8">
-            <div className="relative p-2 sm:p-3 bg-gradient-to-b from-[#181E24] to-[#0A0C0E] flex items-center justify-center">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white leading-tight tracking-tight">
+                {lang === 'pt'
+                  ? 'Psicoterapia on-line em Português, sem fronteiras'
+                  : 'Online Psychotherapy in Portuguese, borderless'}
+              </h1>
+
+              <p className="text-base sm:text-lg text-[#E2D9C8] font-normal leading-relaxed">
+                {lang === 'pt'
+                  ? 'Onde quer que você esteja no mundo, a psicoterapia pode fazer parte da sua jornada de autoconhecimento e cuidado emocional.'
+                  : 'Wherever you are in the world, psychotherapy can be part of your self-knowledge and emotional care journey.'}
+              </p>
+
+              <p className="text-sm sm:text-base text-white/85 font-light leading-relaxed">
+                {lang === 'pt'
+                  ? 'Ofereço atendimento psicológico on-line para pessoas de qualquer nacionalidade, residentes no Brasil ou no exterior, que tenham o português como língua de comunicação. Um espaço de escuta, acolhimento e desenvolvimento pessoal, respeitando a singularidade de cada história, cultura e experiência de vida.'
+                  : 'I provide online psychological therapy for people of any nationality, living in Brazil or abroad, who communicate in Portuguese. A space of sensitive listening, warmth, and personal growth, honoring the uniqueness of every life story and culture.'}
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-white/80">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10">
+                  <span className="w-2 h-2 rounded-full bg-[#34D399]" />
+                  <span>{lang === 'pt' ? 'CRP 06/98605-SP · Sigilo Absoluto' : 'CRP 06/98605-SP · Full Confidentiality'}</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10">
+                  <span>🇧🇷 🇺🇸 🇪🇺 🌎</span>
+                  <span>{lang === 'pt' ? 'Conduzido em Língua Portuguesa' : 'Conducted in Portuguese'}</span>
+                </span>
+              </div>
+
+              <div className="pt-4">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-sm sm:text-base font-semibold bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-xl transition-all group"
+                >
+                  <MessageCircle className="w-5 h-5 fill-white" />
+                  <span>{lang === 'pt' ? 'Agendar consulta no WhatsApp' : 'Schedule on WhatsApp'}</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Foto Aberta e Natural como a aba Início (sem quadro preto) */}
+            <div className="lg:col-span-5 flex flex-col items-center justify-center">
               <img
                 src={ASSETS.usa}
                 alt="Dra. Tatiane Vilela - Psicoterapia Online em Português"
-                className="w-full max-h-[580px] object-contain rounded-xl shadow-lg block mx-auto bg-black/40"
+                className="w-full max-w-md h-auto object-contain rounded-2xl drop-shadow-2xl block"
                 loading="eager"
               />
-            </div>
-            <div className="p-3.5 sm:p-4 bg-[#161B20] flex flex-wrap items-center justify-between gap-3 text-xs text-white/80 border-t border-[#C9A227]/30">
-              <span className="flex items-center gap-2 text-[#DFC56E] font-medium">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                {lang === 'pt' ? 'Atendimento Online em Português' : 'Online Care Conducted in Portuguese'}
-              </span>
-              <span className="text-white/60 text-[11px]">
-                {lang === 'pt' ? 'CRP 06/98605-SP · Sigilo Absoluto' : 'Licensed CRP 06/98605-SP · Full Confidentiality'}
-              </span>
+              <div className="mt-3 text-center">
+                <p className="font-serif font-bold text-base text-white">
+                  Dra. Tatiane Vilela
+                </p>
+                <p className="text-xs text-[#DFC56E] mt-0.5">
+                  Psicóloga & Sexóloga · Atendimento Online Global
+                </p>
+              </div>
             </div>
           </div>
-
-          <div className="text-center pt-2">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="animate-shimmer inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm sm:text-base font-semibold bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-xl transition-all"
-            >
-              <MessageCircle className="w-5 h-5 fill-white" />
-              <span>{t.cta}</span>
-            </a>
-          </div>
-        </div>
+        </section>
 
         {/* Therapy in Portuguese for Worldwide Patients */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-16">

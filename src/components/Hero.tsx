@@ -176,79 +176,83 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
         </div>
 
         {/* Foreground Content Container (Aligned to left half, exactly as in mockup) */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 w-full">
-          <div className="max-w-xl lg:max-w-2xl text-left space-y-5 sm:space-y-6">
-            {/* 1. Category Tagline */}
-            <p className="text-xs sm:text-[13px] tracking-[0.24em] uppercase font-semibold text-[#DFC56E] leading-none">
-              {lang === 'pt' ? 'SAÚDE EMOCIONAL' : 'EMOTIONAL HEALTH'} <span className="mx-2 text-[#C9A227]/70">|</span> {lang === 'pt' ? 'RELACIONAMENTOS' : 'RELATIONSHIPS'}{' '}
-              <span className="mx-2 text-[#C9A227]/70">|</span> {lang === 'pt' ? 'SEXUALIDADE' : 'SEXUALITY'}
-            </p>
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-8 sm:pb-12 w-full">
+          <div className="max-w-xl lg:max-w-2xl text-left space-y-3 sm:space-y-4">
+            {/* 1. Category Tagline - Impactful pill badge with emerald/teal and silver-champagne accent */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
+              <span className="w-2 h-2 rounded-full bg-[#34D399] animate-pulse" />
+              <p className="text-[11px] sm:text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-white">
+                {lang === 'pt' ? 'SAÚDE EMOCIONAL' : 'EMOTIONAL HEALTH'} <span className="mx-1.5 text-[#5EEAD4]">|</span> {lang === 'pt' ? 'RELACIONAMENTOS' : 'RELATIONSHIPS'}{' '}
+                <span className="mx-1.5 text-[#5EEAD4]">|</span> {lang === 'pt' ? 'SEXUALIDADE' : 'SEXUALITY'}
+              </p>
+            </div>
 
-            {/* 2. Main Headline in classic serif */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-serif font-bold text-[#FFF9F2] leading-[1.12] tracking-tight whitespace-pre-line">
-              {h.headline}
+            {/* 2. Main Headline in classic serif with high-impact crystalline white and champagne-rose highlights */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-serif font-extrabold text-white leading-[1.12] tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
+              {lang === 'pt' ? (
+                <>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#F0ECE1] to-[#E2D9C8]">
+                    Mais conexão
+                  </span>
+                  <br />
+                  <span className="text-white">com a sua história</span>
+                  <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A7F3D0] via-[#E0E7FF] to-white">
+                    para uma vida mais plena.
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#F0ECE1] to-[#E2D9C8]">
+                    More connection
+                  </span>
+                  <br />
+                  <span className="text-white">with your story</span>
+                  <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A7F3D0] via-[#E0E7FF] to-white">
+                    for a fuller life.
+                  </span>
+                </>
+              )}
             </h1>
 
-            {/* 3. Subheadline */}
-            <p className="text-sm sm:text-base text-[#E5DDD2] font-light leading-relaxed max-w-lg">
+            {/* 3. Subheadline - High legibility, crisp text */}
+            <p className="text-sm sm:text-base md:text-[17px] text-[#F3EFEA] font-normal leading-relaxed max-w-lg drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               {h.subheadline}
             </p>
 
-            {/* 4. Action Buttons (Side by Side) */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
-              {/* Primary WhatsApp Button with golden bronze gradient & gold border */}
-              <a
-                href={whatsappHeroUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#FFF9F0] bg-[#432E16] hover:bg-[#4E371C] border border-[#C9A227] shadow-xl hover:shadow-[#C9A227]/20 transition-all cursor-pointer group"
-              >
-                <MessageCircle className="w-4 h-4 text-[#DFC56E] shrink-0" />
-                <span>{h.ctaPrimary}</span>
-                <span className="text-[#DFC56E] font-bold group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </a>
-
-              {/* Secondary Services Button (black translucent with gold border) */}
-              <button
-                type="button"
-                onClick={onExploreServices}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-black/60 hover:bg-black/85 border border-[#C9A227]/75 hover:border-[#DFC56E] transition-all cursor-pointer group"
-              >
-                <span>{h.ctaSecondary}</span>
-                <span className="text-[#DFC56E] font-bold group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </button>
-            </div>
-
-            {/* 5. Bottom 3 Features Row */}
-            <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-white/15 text-xs text-[#EAE2D5]">
+            {/* 5. Bottom 3 Features Row - Impactful frosted cards with distinct accents */}
+            <div className="pt-3 grid grid-cols-1 sm:grid-cols-3 gap-3 border-t border-white/20 text-xs">
               {/* Presencial em SBC */}
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-5 h-5 text-[#C9A227] shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 p-2 rounded-xl bg-black/30 backdrop-blur-sm border border-white/10 shadow-md">
+                <div className="p-1.5 rounded-lg bg-[#5EEAD4]/15 border border-[#5EEAD4]/30 shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4 text-[#5EEAD4]" />
+                </div>
                 <div className="leading-tight">
-                  <p className="font-semibold text-white">{lang === 'pt' ? 'Atendimento presencial em' : 'In-person care in'}</p>
-                  <p className="text-white/70 text-[11px] mt-0.5">São Bernardo do Campo - SP</p>
+                  <p className="font-bold text-white text-xs">{lang === 'pt' ? 'Atendimento presencial' : 'In-person care'}</p>
+                  <p className="text-[#E2D9C8] text-[11px] mt-0.5 font-medium">São Bernardo do Campo - SP</p>
                 </div>
               </div>
 
               {/* Online Brasil e Exterior */}
-              <div className="flex items-start gap-2.5">
-                <Laptop className="w-5 h-5 text-[#C9A227] shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 p-2 rounded-xl bg-black/30 backdrop-blur-sm border border-white/10 shadow-md">
+                <div className="p-1.5 rounded-lg bg-[#60A5FA]/15 border border-[#60A5FA]/30 shrink-0 mt-0.5">
+                  <Laptop className="w-4 h-4 text-[#93C5FD]" />
+                </div>
                 <div className="leading-tight">
-                  <p className="font-semibold text-white">{lang === 'pt' ? 'Atendimento online' : 'Online care'}</p>
-                  <p className="text-white/70 text-[11px] mt-0.5">{lang === 'pt' ? 'para o Brasil e exterior' : 'for Brazil & abroad'}</p>
+                  <p className="font-bold text-white text-xs">{lang === 'pt' ? 'Atendimento online' : 'Online care'}</p>
+                  <p className="text-[#E2D9C8] text-[11px] mt-0.5 font-medium">{lang === 'pt' ? 'Brasil & exterior' : 'Brazil & abroad'}</p>
                 </div>
               </div>
 
               {/* Seguro e sigiloso */}
-              <div className="flex items-start gap-2.5">
-                <ShieldCheck className="w-5 h-5 text-[#C9A227] shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 p-2 rounded-xl bg-black/30 backdrop-blur-sm border border-white/10 shadow-md">
+                <div className="p-1.5 rounded-lg bg-[#34D399]/15 border border-[#34D399]/30 shrink-0 mt-0.5">
+                  <ShieldCheck className="w-4 h-4 text-[#34D399]" />
+                </div>
                 <div className="leading-tight">
-                  <p className="font-semibold text-white">{lang === 'pt' ? 'Ambiente seguro' : 'Secure & strict'}</p>
-                  <p className="text-white/70 text-[11px] mt-0.5">{lang === 'pt' ? 'e sigiloso' : 'confidential setting'}</p>
+                  <p className="font-bold text-white text-xs">{lang === 'pt' ? 'Ambiente seguro' : 'Strict & secure'}</p>
+                  <p className="text-[#E2D9C8] text-[11px] mt-0.5 font-medium">{lang === 'pt' ? 'Sigilo absoluto CRP' : 'Full confidentiality'}</p>
                 </div>
               </div>
             </div>
@@ -257,29 +261,29 @@ export const Hero: React.FC<HeroProps> = ({ lang, onExploreServices }) => {
       </section>
 
       {/* 2. THE 6-CARD SERVICES STRIP (Light Cream / Parchment Bar exactly as in mockup) */}
-      <section className="bg-[#FAF7F2] border-t-2 border-[#C9A227]/40 border-b border-[#EDE6DC] py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-3 lg:divide-x lg:divide-[#E5DDD2]">
+      <section className="bg-[#FAF7F2] border-t-2 border-[#C9A227]/40 border-b border-[#EDE6DC] py-6 sm:py-7 px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-4 lg:gap-2 lg:divide-x lg:divide-[#E5DDD2]">
             {stripServices.map((srv, idx) => (
               <div
                 key={srv.id}
                 onClick={onExploreServices}
-                className={`flex flex-col items-center text-center px-2 cursor-pointer group transition-all duration-300 hover:-translate-y-1 ${
-                  idx > 0 ? 'lg:pl-4' : ''
+                className={`flex flex-col items-center text-center px-1.5 sm:px-2 cursor-pointer group transition-all duration-300 hover:-translate-y-1 ${
+                  idx > 0 ? 'lg:pl-3' : ''
                 }`}
               >
                 {/* Circular dark bronze badge with golden icon */}
-                <div className="w-12 h-12 rounded-full bg-gradient-to-b from-[#4A3219] to-[#2B1B0C] border-2 border-[#C9A227] flex items-center justify-center shadow-md mb-3 group-hover:scale-110 group-hover:border-[#DFC56E] group-hover:shadow-[#C9A227]/30 transition-all duration-300 shrink-0">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-b from-[#4A3219] to-[#2B1B0C] border-2 border-[#C9A227] flex items-center justify-center shadow-md mb-2 group-hover:scale-110 group-hover:border-[#DFC56E] group-hover:shadow-[#C9A227]/30 transition-all duration-300 shrink-0">
                   {srv.icon}
                 </div>
 
-                {/* Title in serif font */}
-                <h4 className="font-serif font-bold text-sm sm:text-base text-[#1E1914] group-hover:text-[#8C631A] transition-colors leading-snug">
+                {/* Title in serif font - forced on single line without breaking */}
+                <h4 className="font-serif font-bold text-xs sm:text-[13px] md:text-sm lg:text-[13px] xl:text-sm text-[#1E1914] group-hover:text-[#8C631A] transition-colors leading-tight whitespace-nowrap tracking-tight">
                   {srv.title}
                 </h4>
 
                 {/* Description */}
-                <p className="text-[11px] sm:text-xs text-[#6B5A4B] leading-relaxed mt-1 font-light">
+                <p className="text-[11px] sm:text-xs text-[#6B5A4B] leading-snug mt-1 font-light">
                   {srv.desc}
                 </p>
               </div>

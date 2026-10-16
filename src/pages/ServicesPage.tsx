@@ -59,67 +59,35 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ lang, onBackToHome, 
           <div className="absolute inset-0 bg-gradient-to-r from-[#111417] via-[#111417]/95 to-[#1a140e]/90 z-0" />
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#C9A227]/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C9A227]/15 border border-[#C9A227]/40 text-[#DFC56E] text-xs font-semibold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-[#C9A227]" />
-                <span>{lang === 'pt' ? 'Acolhimento & Cuidado Personalizado' : 'Warmth & Personalized Care'}</span>
-              </div>
-
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white leading-tight">
-                {t.title}
-              </h1>
-
-              <p className="text-base sm:text-lg text-white/85 font-light leading-relaxed">
-                {t.subtitle}
-              </p>
-
-              <p className="text-xs sm:text-sm text-[#DFC56E]/90 italic font-light pt-1">
-                {lang === 'pt'
-                  ? 'Cada processo terapêutico é único: o ritmo, o acolhimento e o tempo são adaptados de acordo com a individualidade e a modalidade de cada atendimento.'
-                  : 'Every therapeutic journey is unique: pace, warmth, and time are honored according to individual and modality needs.'}
-              </p>
-
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-white/80">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10">
-                  <Heart className="w-3.5 h-3.5 text-[#C9A227]" />
-                  <span>{lang === 'pt' ? 'Escuta acolhedora e sem julgamentos' : 'Empathetic, non-judgmental listening'}</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10">
-                  <span className="w-2 h-2 rounded-full bg-[#25D366]" />
-                  <span>{lang === 'pt' ? 'Presencial em SBC & 100% Online' : 'In-person in SBC & 100% Online'}</span>
-                </span>
-              </div>
+          <div className="relative z-10 max-w-4xl mx-auto text-center space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C9A227]/15 border border-[#C9A227]/40 text-[#DFC56E] text-xs font-semibold uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5 text-[#C9A227]" />
+              <span>{lang === 'pt' ? 'Acolhimento & Cuidado Personalizado' : 'Warmth & Personalized Care'}</span>
             </div>
 
-            {/* Right Photo Column: Poltrona de Couro + Fundo de Estante do Consultório */}
-            <div className="lg:col-span-5">
-              <div className="relative group">
-                {/* Golden ambient glow around image */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#C9A227]/30 to-[#8C631A]/30 rounded-2xl blur-md opacity-75 group-hover:opacity-100 transition duration-500" />
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white leading-tight">
+              {lang === 'pt' ? 'Psicoterapia' : 'Psychotherapy'}
+            </h1>
 
-                <div className="relative rounded-2xl overflow-hidden border-2 border-[#C9A227]/40 shadow-2xl bg-[#161B20]">
-                  <img
-                    src={ASSETS.space}
-                    alt={lang === 'pt' ? 'Consultório Dra. Tatiane Vilela - Poltrona e Estante de Acolhimento' : 'Dr. Tatiane Vilela Clinic - Armchair and Library'}
-                    className="w-full h-64 sm:h-72 lg:h-80 object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                    loading="eager"
-                  />
-                  {/* Bottom caption overlay representing the welcoming therapy room */}
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 sm:p-5 text-white">
-                    <p className="text-xs uppercase tracking-wider font-semibold text-[#DFC56E] flex items-center gap-1.5 mb-1">
-                      <span className="w-2 h-2 rounded-full bg-[#C9A227] animate-pulse" />
-                      {lang === 'pt' ? 'Nosso Espaço Terapêutico' : 'Our Therapeutic Sanctuary'}
-                    </p>
-                    <p className="text-xs sm:text-sm text-white/90 font-light leading-snug">
-                      {lang === 'pt'
-                        ? 'A poltrona e o ambiente acolhedor preparados especialmente para o seu bem-estar e serenidade.'
-                        : 'The armchair and welcoming environment designed for your serenity and emotional well-being.'}
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <p className="text-base sm:text-lg text-white/85 font-light leading-relaxed max-w-2xl mx-auto">
+              {t.subtitle}
+            </p>
+
+            <p className="text-xs sm:text-sm text-[#DFC56E]/90 italic font-light pt-1 max-w-2xl mx-auto">
+              {lang === 'pt'
+                ? 'Cada processo terapêutico é único: o ritmo, o acolhimento e o tempo são adaptados de acordo com a individualidade e a modalidade de cada atendimento.'
+                : 'Every therapeutic journey is unique: pace, warmth, and time are honored according to individual and modality needs.'}
+            </p>
+
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-3 text-xs text-white/80">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10">
+                <Heart className="w-3.5 h-3.5 text-[#C9A227]" />
+                <span>{lang === 'pt' ? 'Escuta acolhedora e sem julgamentos' : 'Empathetic, non-judgmental listening'}</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10">
+                <span className="w-2 h-2 rounded-full bg-[#25D366]" />
+                <span>{lang === 'pt' ? 'Presencial em SBC & 100% Online' : 'In-person in SBC & 100% Online'}</span>
+              </span>
             </div>
           </div>
         </div>

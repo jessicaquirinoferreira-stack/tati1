@@ -26,8 +26,8 @@ export const CONTENT = {
   pt: {
     nav: {
       home: 'Início',
-      about: 'Quem sou eu',
-      services: 'Serviços',
+      about: 'Trajetória e Atuação',
+      services: 'Psicoterapia',
       cuidadoIdeal: 'Cuidado Ideal',
       usa: 'Brasil & Exterior',
       contact: 'Contato',
@@ -87,50 +87,73 @@ export const CONTENT = {
       whatsappBtn: 'Falar no WhatsApp',
       items: [
         {
-          id: 'diversidade-sexual',
-          title: 'Diversidade Sexual',
-          subtitle: 'Todo amor merece respeito.',
+          id: 'terapia-individual',
+          title: 'Terapia Individual',
+          subtitle: 'Você importa. E sua história também.',
           shortDesc:
-            'Um espaço seguro para você falar sobre sua identidade, seus sentimentos, suas relações e suas descobertas. Aqui você encontra escuta acolhedora, ética e sem julgamentos. Ser quem você é também é saúde.',
+            'Um espaço seguro para você se escutar, compreender o que sente e cuidar de si. Você importa. E sua história também.',
           fullDesc: [
-            'Um espaço seguro para você falar sobre sua identidade, seus sentimentos, suas relações e suas descobertas.',
-            'Aqui você encontra escuta acolhedora, ética e sem julgamentos. Ser quem você é também é saúde.',
+            'Um espaço seguro para você se escutar, compreender o que sente e cuidar de si.',
+            'Você importa. E sua história também.',
           ],
           benefits: [
-            'Escuta acolhedora, ética e sem julgamentos',
-            'Espaço seguro para identidade e descobertas',
-            'Ser quem você é também é saúde',
+            'Espaço seguro para se escutar e compreender',
+            'Cuidado atencioso com o que você sente',
+            'Você importa. E sua história também.',
           ],
           forWhom: [
-            'Pessoas que buscam acolhimento em sua identidade e expressão',
-            'Quem deseja apoio psicológico livre de preconceitos',
+            'Qualquer pessoa buscando autoconhecimento e cuidado emocional',
+            'Quem deseja apoio profissional ético e humanizado',
           ],
-          whatsappMessage: 'Olá Dra. Tatiane, gostaria de saber mais sobre Diversidade Sexual.',
-          iconName: 'heart',
-          imageUrl: 'https://i.imgur.com/GUU68n1.jpeg',
+          whatsappMessage: 'Olá Dra. Tatiane, gostaria de agendar Terapia Individual.',
+          iconName: 'user',
+          imageUrl: 'https://i.imgur.com/aNEie4U.png',
         },
         {
-          id: 'relacao-pais-filhos',
-          title: 'Relação Pais e Filhos',
-          subtitle: 'Diálogo hoje, laços mais fortes amanhã.',
+          id: 'terapia-casal',
+          title: 'Terapia de Casal',
+          subtitle: 'Mais diálogo. Mais compreensão. Mais conexão.',
           shortDesc:
-            'A terapia pode ajudar a melhorar a comunicação, compreender diferentes perspectivas e construir relações mais saudáveis e afetuosas entre pais e filhos, em todas as fases da vida. Famílias que se escutam crescem juntas.',
+            'Um espaço seguro para vocês olharem juntos para o que importa. Fortalecendo vínculos mais saudáveis que também são possíveis.',
           fullDesc: [
-            'A terapia pode ajudar a melhorar a comunicação, compreender diferentes perspectivas e construir relações mais saudáveis e afetuosas entre pais e filhos, em todas as fases da vida.',
-            'Famílias que se escutam crescem juntas.',
+            'Um espaço seguro para vocês olharem juntos para o que importa.',
+            'Fortalecendo vínculos mais saudáveis que também são possíveis.',
           ],
           benefits: [
-            'Melhoria na comunicação e diálogo familiar',
-            'Compreensão de diferentes perspectivas',
-            'Famílias que se escutam crescem juntas',
+            'Mais diálogo, compreensão e conexão',
+            'Espaço seguro para olhar para o que importa',
+            'Fortalecendo vínculos mais saudáveis',
           ],
           forWhom: [
-            'Pais e filhos em busca de melhor convivência',
-            'Famílias enfrentando conflitos ou distanciamento',
+            'Casais em busca de reconexão e diálogo produtivo',
+            'Parceiros que desejam fortalecer o relacionamento',
           ],
-          whatsappMessage: 'Olá Dra. Tatiane, gostaria de agendar uma consulta sobre Relação Pais e Filhos.',
+          whatsappMessage: 'Olá Dra. Tatiane, gostaria de saber mais sobre Terapia de Casal.',
           iconName: 'users',
-          imageUrl: 'https://i.imgur.com/Us9EwMN.jpeg',
+          imageUrl: 'https://i.imgur.com/fZDoFAa.png',
+        },
+        {
+          id: 'terapia-familiar',
+          title: 'Terapia Familiar',
+          subtitle: 'Fortalecendo vínculos para relações mais saudáveis.',
+          shortDesc:
+            'A terapia familiar ajuda a melhorar a comunicação, resolver conflitos e construir um ambiente mais leve e acolhedor para todos. Famílias mais conectadas, vidas mais equilibradas.',
+          fullDesc: [
+            'A terapia familiar ajuda a melhorar a comunicação, resolver conflitos e construir um ambiente mais leve e acolhedor para todos.',
+            'Famílias mais conectadas, vidas mais equilibradas.',
+          ],
+          benefits: [
+            'Melhoria da comunicação em família',
+            'Resolução de conflitos de forma acolhedora',
+            'Famílias mais conectadas, vidas mais equilibradas',
+          ],
+          forWhom: [
+            'Famílias que buscam harmonia e união',
+            'Ambiente mais leve e acolhedor para todos',
+          ],
+          whatsappMessage: 'Olá Dra. Tatiane, gostaria de agendar Terapia Familiar.',
+          iconName: 'users',
+          imageUrl: 'https://i.imgur.com/HEq0loe.png',
         },
         {
           id: 'empoderamento-feminino',
@@ -156,6 +179,29 @@ export const CONTENT = {
           imageUrl: 'https://i.imgur.com/dwTdy5c.jpeg',
         },
         {
+          id: 'relacao-pais-filhos',
+          title: 'Relações Pais e Filhos',
+          subtitle: 'Diálogo hoje, laços mais fortes amanhã.',
+          shortDesc:
+            'A terapia pode ajudar a melhorar a comunicação, compreender diferentes perspectivas e construir relações mais saudáveis e afetuosas entre pais e filhos, em todas as fases da vida. Famílias que se escutam crescem juntas.',
+          fullDesc: [
+            'A terapia pode ajudar a melhorar a comunicação, compreender diferentes perspectivas e construir relações mais saudáveis e afetuosas entre pais e filhos, em todas as fases da vida.',
+            'Famílias que se escutam crescem juntas.',
+          ],
+          benefits: [
+            'Melhoria na comunicação e diálogo familiar',
+            'Compreensão de diferentes perspectivas',
+            'Famílias que se escutam crescem juntas',
+          ],
+          forWhom: [
+            'Pais e filhos em busca de melhor convivência',
+            'Famílias enfrentando conflitos ou distanciamento',
+          ],
+          whatsappMessage: 'Olá Dra. Tatiane, gostaria de agendar uma consulta sobre Relações Pais e Filhos.',
+          iconName: 'users',
+          imageUrl: 'https://i.imgur.com/Us9EwMN.jpeg',
+        },
+        {
           id: 'sexualidade-humana',
           title: 'Sexualidade Humana',
           subtitle: 'Conhecimento, respeito e liberdade para viver quem você é.',
@@ -179,73 +225,27 @@ export const CONTENT = {
           imageUrl: 'https://i.imgur.com/0l4w8YJ.jpeg',
         },
         {
-          id: 'psicoterapia-casal',
-          title: 'Psicoterapia de Casal',
-          subtitle: 'Mais diálogo. Mais compreensão. Mais conexão.',
+          id: 'diversidade-sexual',
+          title: 'Diversidade Sexual',
+          subtitle: 'Todo amor merece respeito.',
           shortDesc:
-            'Um espaço seguro para vocês olharem juntos para o que importa. Fortalecendo vínculos mais saudáveis que também são possíveis.',
+            'Um espaço seguro para você falar sobre sua identidade, seus sentimentos, suas relações e suas descobertas. Aqui você encontra escuta acolhedora, ética e sem julgamentos. Ser quem você é também é saúde.',
           fullDesc: [
-            'Um espaço seguro para vocês olharem juntos para o que importa.',
-            'Fortalecendo vínculos mais saudáveis que também são possíveis.',
+            'Um espaço seguro para você falar sobre sua identidade, seus sentimentos, suas relações e suas descobertas.',
+            'Aqui você encontra escuta acolhedora, ética e sem julgamentos. Ser quem você é também é saúde.',
           ],
           benefits: [
-            'Mais diálogo, compreensão e conexão',
-            'Espaço seguro para olhar para o que importa',
-            'Fortalecendo vínculos mais saudáveis',
+            'Escuta acolhedora, ética e sem julgamentos',
+            'Espaço seguro para identidade e descobertas',
+            'Ser quem você é também é saúde',
           ],
           forWhom: [
-            'Casais em busca de reconexão e diálogo produtivo',
-            'Parceiros que desejam fortalecer o relacionamento',
+            'Pessoas que buscam acolhimento em sua identidade e expressão',
+            'Quem deseja apoio psicológico livre de preconceitos',
           ],
-          whatsappMessage: 'Olá Dra. Tatiane, gostaria de saber mais sobre Psicoterapia de Casal.',
-          iconName: 'users',
-          imageUrl: 'https://i.imgur.com/fZDoFAa.png',
-        },
-        {
-          id: 'psicoterapia-familiar',
-          title: 'Psicoterapia Familiar',
-          subtitle: 'Fortalecendo vínculos para relações mais saudáveis.',
-          shortDesc:
-            'A terapia familiar ajuda a melhorar a comunicação, resolver conflitos e construir um ambiente mais leve e acolhedor para todos. Famílias mais conectadas, vidas mais equilibradas.',
-          fullDesc: [
-            'A terapia familiar ajuda a melhorar a comunicação, resolver conflitos e construir um ambiente mais leve e acolhedor para todos.',
-            'Famílias mais conectadas, vidas mais equilibradas.',
-          ],
-          benefits: [
-            'Melhoria da comunicação em família',
-            'Resolução de conflitos de forma acolhedora',
-            'Famílias mais conectadas, vidas mais equilibradas',
-          ],
-          forWhom: [
-            'Famílias que buscam harmonia e união',
-            'Ambiente mais leve e acolhedor para todos',
-          ],
-          whatsappMessage: 'Olá Dra. Tatiane, gostaria de agendar Psicoterapia Familiar.',
-          iconName: 'users',
-          imageUrl: 'https://i.imgur.com/HEq0loe.png',
-        },
-        {
-          id: 'psicoterapia-individual',
-          title: 'Psicoterapia Individual',
-          subtitle: 'Você importa. E sua história também.',
-          shortDesc:
-            'Um espaço seguro para você se escutar, compreender o que sente e cuidar de si. Você importa. E sua história também.',
-          fullDesc: [
-            'Um espaço seguro para você se escutar, compreender o que sente e cuidar de si.',
-            'Você importa. E sua história também.',
-          ],
-          benefits: [
-            'Espaço seguro para se escutar e compreender',
-            'Cuidado atencioso com o que você sente',
-            'Você importa. E sua história também.',
-          ],
-          forWhom: [
-            'Qualquer pessoa buscando autoconhecimento e cuidado emocional',
-            'Quem deseja apoio profissional ético e humanizado',
-          ],
-          whatsappMessage: 'Olá Dra. Tatiane, gostaria de agendar Psicoterapia Individual.',
-          iconName: 'user',
-          imageUrl: 'https://i.imgur.com/aNEie4U.png',
+          whatsappMessage: 'Olá Dra. Tatiane, gostaria de saber mais sobre Diversidade Sexual.',
+          iconName: 'heart',
+          imageUrl: 'https://i.imgur.com/GUU68n1.jpeg',
         },
       ] as ServiceItem[],
     },
@@ -283,10 +283,10 @@ export const CONTENT = {
     },
     usaSection: {
       tagline: 'Atendimento Sem Fronteiras Geográficas',
-      title: 'Terapia Online para Brasil e Exterior',
-      highlightBadge: 'Atendimento Psicológico em Português para Qualquer Lugar do Mundo',
-      p1: 'Realizo psicoterapia para qualquer pessoa que estiver em qualquer lugar do mundo — seja em qualquer estado do Brasil ou vivendo no exterior —, desde que a pessoa fale português, pois todo o meu atendimento clínico é realizado exclusivamente em língua portuguesa.',
-      p2: 'Um espaço de escuta acolhedor, seguro, ético e confidencial. Você não precisa enfrentar suas dores ou desafios emocionais sozinho: onde quer que você esteja, se você fala português, encontrará aqui um cuidado profissional dedicado e transformador.',
+      title: 'Psicoterapia on-line em Português, sem fronteiras',
+      highlightBadge: 'Psicoterapia on-line em Português, sem fronteiras',
+      p1: 'Onde quer que você esteja no mundo, a psicoterapia pode fazer parte da sua jornada de autoconhecimento e cuidado emocional.',
+      p2: 'Ofereço atendimento psicológico on-line para pessoas de qualquer nacionalidade, residentes no Brasil ou no exterior, que tenham o português como língua de comunicação. Um espaço de escuta, acolhimento e desenvolvimento pessoal, respeitando a singularidade de cada história, cultura e experiência de vida.',
       benefits: [
         {
           title: 'Atendimento Exclusivo em Português',
@@ -449,8 +449,8 @@ export const CONTENT = {
   en: {
     nav: {
       home: 'Home',
-      about: 'About Me',
-      services: 'Services',
+      about: 'Journey & Practice',
+      services: 'Psychotherapy',
       cuidadoIdeal: 'Ideal Care',
       usa: 'Brazil & Abroad',
       contact: 'Contact',

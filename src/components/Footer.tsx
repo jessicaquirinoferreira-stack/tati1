@@ -40,11 +40,12 @@ export const Footer: React.FC<FooterProps> = ({
                 <span className="text-2xl font-serif font-bold text-white tracking-wide block">
                   {CLINIC_INFO.name}
                 </span>
-                <div className="flex items-center gap-2 text-xs text-[#DFC56E] tracking-wider uppercase font-medium mt-0.5">
-                  <span>{lang === 'pt' ? CLINIC_INFO.titlePt : CLINIC_INFO.titleEn}</span>
-                  <span className="text-white/40">·</span>
-                  <span className="text-white/60 font-mono text-[11px]">{CLINIC_INFO.crp}</span>
-                </div>
+                <p className="text-xs text-[#DFC56E] tracking-wider uppercase font-semibold mt-0.5">
+                  {lang === 'pt' ? CLINIC_INFO.titlePt : CLINIC_INFO.titleEn}
+                </p>
+                <p className="text-white/70 font-mono text-xs tracking-wider mt-0.5">
+                  {CLINIC_INFO.crp}
+                </p>
               </div>
             </div>
 
@@ -100,51 +101,48 @@ export const Footer: React.FC<FooterProps> = ({
             <h4 className="text-xs uppercase tracking-widest font-semibold text-[#DFC56E]">
               {t.navigationTitle}
             </h4>
-            <ul className="space-y-2 text-sm text-white/75">
+            <ul className="space-y-1 text-sm text-white/80">
               <li>
                 <button
+                  type="button"
                   onClick={() => onNavigate('home')}
-                  className="hover:text-[#DFC56E] transition-colors cursor-pointer"
+                  className="px-3 py-1.5 rounded-lg text-white/80 hover:text-[#FFF9F0] hover:bg-[#3F2B16] hover:border hover:border-[#C9A227]/40 hover:shadow-md transition-all duration-200 cursor-pointer block w-full text-left font-medium"
                 >
                   {navT.home}
                 </button>
               </li>
               <li>
                 <button
+                  type="button"
                   onClick={() => onNavigate('sobre')}
-                  className="hover:text-[#DFC56E] transition-colors cursor-pointer"
+                  className="px-3 py-1.5 rounded-lg text-white/80 hover:text-[#FFF9F0] hover:bg-[#3F2B16] hover:border hover:border-[#C9A227]/40 hover:shadow-md transition-all duration-200 cursor-pointer block w-full text-left font-medium"
                 >
                   {navT.about}
                 </button>
               </li>
               <li>
                 <button
+                  type="button"
                   onClick={() => onNavigate('servicos')}
-                  className="hover:text-[#DFC56E] transition-colors cursor-pointer"
+                  className="px-3 py-1.5 rounded-lg text-white/80 hover:text-[#FFF9F0] hover:bg-[#3F2B16] hover:border hover:border-[#C9A227]/40 hover:shadow-md transition-all duration-200 cursor-pointer block w-full text-left font-medium"
                 >
                   {navT.services}
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('cuidado-ideal')}
-                  className="hover:text-[#DFC56E] transition-colors cursor-pointer"
-                >
-                  {navT.cuidadoIdeal}
-                </button>
-              </li>
-              <li>
-                <button
+                  type="button"
                   onClick={() => onNavigate('eua')}
-                  className="hover:text-[#DFC56E] transition-colors cursor-pointer"
+                  className="px-3 py-1.5 rounded-lg text-white/80 hover:text-[#FFF9F0] hover:bg-[#3F2B16] hover:border hover:border-[#C9A227]/40 hover:shadow-md transition-all duration-200 cursor-pointer block w-full text-left font-medium"
                 >
                   {navT.usa}
                 </button>
               </li>
               <li>
                 <button
+                  type="button"
                   onClick={() => onNavigate('contato')}
-                  className="hover:text-[#DFC56E] transition-colors cursor-pointer"
+                  className="px-3 py-1.5 rounded-lg text-white/80 hover:text-[#FFF9F0] hover:bg-[#3F2B16] hover:border hover:border-[#C9A227]/40 hover:shadow-md transition-all duration-200 cursor-pointer block w-full text-left font-medium"
                 >
                   {navT.contact}
                 </button>
@@ -170,8 +168,9 @@ export const Footer: React.FC<FooterProps> = ({
               </a>
 
               <a
-                href={`mailto:${CLINIC_INFO.email}`}
+                href={`mailto:${CLINIC_INFO.email.toLowerCase()}?subject=${encodeURIComponent(lang === 'pt' ? 'Contato via Site - Dra. Tatiane Vilela' : 'Website Inquiry - Dr. Tatiane Vilela')}`}
                 className="flex items-center gap-2 hover:text-[#DFC56E] transition-colors break-all"
+                title={lang === 'pt' ? 'Enviar e-mail para Dra. Tatiane Vilela' : 'Send email to Dr. Tatiane Vilela'}
               >
                 <Mail className="w-4 h-4 text-[#DFC56E] shrink-0" />
                 <span>{CLINIC_INFO.email}</span>

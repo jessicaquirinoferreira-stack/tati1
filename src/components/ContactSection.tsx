@@ -274,16 +274,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
 
               {/* Email Item */}
               <a
-                href={`mailto:${CLINIC_INFO.email}`}
-                className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#FBF8EB] transition-colors group"
+                href={`mailto:${CLINIC_INFO.email.toLowerCase()}?subject=${encodeURIComponent(lang === 'pt' ? 'Consulta Psicológica / Informações - Dra. Tatiane Vilela' : 'Psychological Consultation / Information - Dr. Tatiane Vilela')}&body=${encodeURIComponent(lang === 'pt' ? 'Olá Dra. Tatiane,\n\nGostaria de mais informações sobre agendamento de consulta de psicoterapia.\n\nMeu nome:\nTelefone para contato:\nModalidade de interesse (Presencial em SBC ou Online):\n\nObrigado(a)!' : 'Hello Dr. Tatiane,\n\nI would like more information about scheduling a psychotherapy session.\n\nMy name:\nContact phone:\nModality (In-person in SBC or Online):\n\nThank you!')}`}
+                className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#FBF8EB] transition-colors group cursor-pointer"
+                title={lang === 'pt' ? 'Clique para enviar e-mail direto à Dra. Tatiane Vilela' : 'Click to send an email directly to Dr. Tatiane Vilela'}
               >
-                <div className="w-10 h-10 rounded-lg bg-[#C9A227]/15 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-[#C9A227]/15 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                   <Mail className="w-5 h-5 text-[#C9A227]" />
                 </div>
                 <div>
                   <p className="text-xs text-[#525E6A] font-medium">{t.emailLabel}</p>
                   <p className="text-sm font-bold text-[#111417] group-hover:text-[#8C631A] transition-colors break-all">
                     {CLINIC_INFO.email}
+                  </p>
+                  <p className="text-[11px] text-[#8C631A] font-medium mt-0.5">
+                    {lang === 'pt' ? 'Clique para redigir e-mail real' : 'Click to write real email'}
                   </p>
                 </div>
               </a>
